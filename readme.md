@@ -39,7 +39,7 @@ If you discover any security related issues, please email author email instead o
 
 ## Credits
 
-- [author name][link-author]
+- [Rob Attfield][link-author]
 - [All Contributors][link-contributors]
 
 ## License
@@ -49,11 +49,11 @@ license. Please see the [license file](license.md) for more information.
 [ico-version]: https://img.shields.io/packagist/v/rattfieldnz/safe-urls.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/rattfieldnz/safe-urls.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/rattfieldnz/safe-urls/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-styleci]: https://styleci.io/repos/199432762/shield
 
 [link-packagist]: https://packagist.org/packages/rattfieldnz/safe-urls
 [link-downloads]: https://packagist.org/packages/rattfieldnz/safe-urls
 [link-travis]: https://travis-ci.org/rattfieldnz/safe-urls
-[link-styleci]: https://styleci.io/repos/12345678
+[link-styleci]: https://styleci.io/repos/199432762
 [link-author]: https://github.com/rattfieldnz
 [link-contributors]: ../../contributors

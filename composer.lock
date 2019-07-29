@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "921411dcf240a00fb438c634e7fd9533",
+    "content-hash": "50076e508789fc93c0160b0fafe3b329",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2845,16 +2845,16 @@
         },
         {
             "name": "composer/spdx-licenses",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/spdx-licenses.git",
-                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d"
+                "reference": "7ac1e6aec371357df067f8a688c3d6974df68fa5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
-                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/7ac1e6aec371357df067f8a688c3d6974df68fa5",
+                "reference": "7ac1e6aec371357df067f8a688c3d6974df68fa5",
                 "shasum": ""
             },
             "require": {
@@ -2901,7 +2901,7 @@
                 "spdx",
                 "validator"
             ],
-            "time": "2019-03-26T10:23:26+00:00"
+            "time": "2019-07-29T10:31:59+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -3498,6 +3498,54 @@
             "time": "2018-07-08T19:19:57+00:00"
         },
         {
+            "name": "php-cs-fixer/phpunit-constraint-isidenticalstring",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring.git",
+                "reference": "94e6d1032557253892b4797bc8b6262aac72d5f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/zipball/94e6d1032557253892b4797bc8b6262aac72d5f9",
+                "reference": "94e6d1032557253892b4797bc8b6262aac72d5f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3 || ^7.0 || ^8.0",
+                "phpunitgoodpractices/polyfill": "^1.1"
+            },
+            "conflict": {
+                "hhvm": "*"
+            },
+            "require-dev": {
+                "johnkary/phpunit-speedtrap": "^1.1 || ^2.0 || ^3.0",
+                "symfony/phpunit-bridge": "^3.2.2 || ^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpCsFixer\\PhpunitConstraintIsIdenticalString\\": "src/"
+                },
+                "files": [
+                    "src/Constraint/IsIdenticalString.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dariusz Rumiński",
+                    "email": "dariusz.ruminski@gmail.com"
+                }
+            ],
+            "description": "Constraint for testing strings considering not-same line endings.",
+            "time": "2019-03-25T08:22:50+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "1.0.1",
             "source": {
@@ -4046,6 +4094,52 @@
                 "xunit"
             ],
             "time": "2019-07-15T06:26:24+00:00"
+        },
+        {
+            "name": "phpunitgoodpractices/polyfill",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPUnitGoodPractices/polyfill.git",
+                "reference": "1613c59be473c6b238c119607de820b9274c81fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPUnitGoodPractices/polyfill/zipball/1613c59be473c6b238c119607de820b9274c81fd",
+                "reference": "1613c59be473c6b238c119607de820b9274c81fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "phpunit/phpunit": "^4.0 || ^5.3 || ^6.0 || ^7.0 || ^8.0"
+            },
+            "conflict": {
+                "hhvm": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.12"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/aliases.php"
+                ],
+                "psr-4": {
+                    "PHPUnitGoodPractices\\Polyfill\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dariusz Rumiński",
+                    "email": "dariusz.ruminski@gmail.com"
+                }
+            ],
+            "description": "Lacking future-compat polyfills for PHPUnit.",
+            "time": "2019-02-11T22:28:06+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
