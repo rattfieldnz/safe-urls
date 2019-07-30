@@ -1,22 +1,21 @@
 language: php
-
 php:
-  - 7.1
-  - 7.2
-
+- 7.1
+- 7.2
 before_script:
-  - cp .env.travis .env
-  - composer self-update
-  - composer install --prefer-source --no-interaction
-
+- cp .env.travis .env
+- composer self-update
+- composer install --prefer-source --no-interaction
 before_install:
-  - mysql -e 'CREATE DATABASE safeurls_test;'
-
+- mysql -e 'CREATE DATABASE safeurls_test;'
 script:
-  - vendor/bin/phpunit
-
+- vendor/bin/phpunit
 services:
-  - mysql
-
+- mysql
 notifications:
   email: false
+env:
+  global:
+    secure: n1NSe5uEIO8qfKnVJfkaH2icc/lnwkwT7VG2dd/4zNTCot5iT5mqWEgDBARSbrl+aiMYBf+fROflgvNEtHU0OcyQzV7aLsyUw8syc/FOF6HXB3zCUwMlpoZZa2dtsZ5t1fWQRwNCOkfDj02Rw4VRUQaOcz2lDZqv9S88JihkHL8juWzKo0FUI5YWxTZzZ4cZ7kY3m9u/Tzng+/J27HkIhABpVzxO2OuHHwXOXztXCt2SkLLbGAdPsHJsP7eRszR4XOUqraKhFBJl/VOlnHn2Z+FuOzCtUBbqaVifOoiDrBKXiOiaRsCemA8lNM7ei6NFKelaT3qVvNcE3cm+BlpHu0vMGeqnpH5Ndjs02XLG4A0u9J7zKx8QDzkVZm3R49kz8t+6kpiXXQfL1dPwJLNDkEp0wd+Pmthb1gBabqJERpFRJh2Xh6POUuM8g4/DFOhtUDgg38ZYyLjTQThIyg/VJ1x0/SDvEeuTPUEynIFunFSGJBADqu0P5+vcVUlImYPnrJgbgdNfyifjik97JNPKakHlWAdedEqPBQwe3mi7xLAQfD0Hxj2VsO4LzVna9d1MaThRmaDj+C16TJhYxB1f3/IYecqc1ldn2j8R6nCWcct+5TzhHFqJR9gtnpUr0XuA3voZRCuRMUfA5QmR+1y2W5FRnavH59pR7d04cWZuYJA=
+  matrix:
+    - USE_NETWORK=true
