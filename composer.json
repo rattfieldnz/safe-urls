@@ -24,7 +24,9 @@
         "squizlabs/php_codesniffer": "^3.4",
         "fzaninotto/faker": "~1.8",
         "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.1",
-        "phpunit/php-code-coverage": "~6.1"
+        "phpunit/php-code-coverage": "~6.1",
+        "nette/php-generator": "^3.2",
+        "paulthebaud/phpunit-generator": "^2.1"
     },
     "autoload": {
         "psr-4": {
