@@ -31,7 +31,7 @@ return [
         ],
         'threat_entry_types' => [
             'URL',
-            'THREAT_ENTRY_TYPE_UNSPECIFIED'
+            'THREAT_ENTRY_TYPE_UNSPECIFIED',
         ],
         'threat_platform_types' => [
             'PLATFORM_TYPE_UNSPECIFIED',
@@ -42,9 +42,9 @@ return [
             'IOS',
             'ANY_PLATFORM',
             'ALL_PLATFORMS',
-            'CHROME'
+            'CHROME',
         ],
         'clientId' => 'rattfieldnz-safeurls',
         'clientVersion' => '1.0',
-    ]
+    ],
 ];
