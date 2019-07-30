@@ -20,8 +20,8 @@ return [
     | Sourced from: https://github.com/snipe/Safebrowsing/blob/master/src/Config/safebrowsing.php.
     */
     'google' => [
-        'api_key' => env('GOOGLE_API_KEY'),
-        'timeout' => 10,
+        'api_key'      => env('GOOGLE_API_KEY'),
+        'timeout'      => 10,
         'threat_types' => [
             'THREAT_TYPE_UNSPECIFIED',
             'MALWARE',
@@ -31,7 +31,7 @@ return [
         ],
         'threat_entry_types' => [
             'URL',
-            'THREAT_ENTRY_TYPE_UNSPECIFIED'
+            'THREAT_ENTRY_TYPE_UNSPECIFIED',
         ],
         'threat_platform_types' => [
             'PLATFORM_TYPE_UNSPECIFIED',
@@ -42,9 +42,9 @@ return [
             'IOS',
             'ANY_PLATFORM',
             'ALL_PLATFORMS',
-            'CHROME'
+            'CHROME',
         ],
-        'clientId' => 'rattfieldnz-safeurls',
+        'clientId'      => 'rattfieldnz-safeurls',
         'clientVersion' => '1.0',
-    ]
+    ],
 ];
