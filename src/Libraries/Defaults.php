@@ -3,10 +3,9 @@
 namespace RattfieldNz\SafeUrls\Libraries;
 
 /**
- * Class Defaults
+ * Class Defaults.
  *
  * @author  Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
- * @package RattfieldNz\SafeUrls\Libraries
  */
 class Defaults
 {

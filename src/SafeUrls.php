@@ -12,7 +12,7 @@ namespace RattfieldNz\SafeUrls;
 class SafeUrls
 {
     /**
-     * @var array $urls Variable to hold list of urls to check.
+     * @var array Variable to hold list of urls to check.
      */
     private $urls;
 
