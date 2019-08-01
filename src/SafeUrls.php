@@ -3,12 +3,11 @@
 namespace RattfieldNz\SafeUrls;
 
 /**
- * Class SafeUrls
+ * Class SafeUrls.
  *
  * The main class used for the SafeUrls package.
  *
  * @author Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
- * @package RattfieldNz\SafeUrls
  */
 class SafeUrls
 {
