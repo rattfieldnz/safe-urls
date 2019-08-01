@@ -12,7 +12,7 @@ private: true
 auto: true
 # Ignore errors that can be ignored
 ignore: true
-# Regex (/.*config.php/ for example) that files must not match to have a tests generation
+# Regex (/.*safe-urls.php/ for example) that files must not match to have a tests generation
 exclude: '/^.*config\.php$/'
 # Regex (/.*.php/ for example) that files should match to have a tests generation
 include: '/^.*\.php$/'
