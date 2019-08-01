@@ -3,14 +3,12 @@
 namespace RattfieldNz\SafeUrls\Libraries\Curl;
 
 /**
- * Class Curl
+ * Class Curl.
  *
  * @author  Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
- * @package RattfieldNz\SafeUrls\Libraries\Curl
  */
 class Curl
 {
-
     private $ch;
     private $postUrl;
     private $headers;
@@ -53,7 +51,7 @@ class Curl
     {
         $this->defaultHeaders = [
             'Content-Type: application/json',
-            'Connection: Keep-Alive'
+            'Connection: Keep-Alive',
         ];
     }
 
@@ -71,6 +69,7 @@ class Curl
      * Get the data retrieved from executing CURL request.
      *
      * @see    \RattfieldNz\SafeUrls\Libraries\Curl\Curl->execute().
+     *
      * @return array Retrieved data from CURL request.
      */
     public function getData()
@@ -81,13 +80,13 @@ class Curl
     /**
      * Decodes a string of JSON decoded data.
      *
-     * @param  string $jsonData
+     * @param string $jsonData
+     *
      * @return mixed|null Decoded JSON data.
      */
     private function decode(string $jsonData)
     {
-
-        return !empty($jsonData) ? json_decode($jsonData, true): null;
+        return !empty($jsonData) ? json_decode($jsonData, true) : null;
     }
 
     /**
@@ -95,6 +94,5 @@ class Curl
      */
     private function set(): void
     {
-
     }
 }

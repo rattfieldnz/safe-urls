@@ -3,14 +3,12 @@
 namespace RattfieldNz\SafeUrls\Libraries\Config;
 
 /**
- * Class Config
+ * Class Config.
  *
  * @author  Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
- * @package RattfieldNz\SafeUrls\Libraries\Config
  */
 class Config
 {
-
     // Default entry type
     public const DEFAULT_THREAT_ENTRY_TYPE = 'URL';
 
