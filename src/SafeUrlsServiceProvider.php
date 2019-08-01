@@ -27,12 +27,12 @@ class SafeUrlsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/safe-urls.php' => config_path('safe-urls.php'),
+            __DIR__.'/../config/safe-urls.php' => config_path('safe-urls.php'),
         ]);
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/safe-urls.php', 'safe-urls'
+            __DIR__.'/../config/safe-urls.php', 'safe-urls'
         );
     }
 
@@ -43,7 +43,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/safe-urls.php', 'safe-urls');
+        $this->mergeConfigFrom(__DIR__.'/../config/safe-urls.php', 'safe-urls');
 
         // Register the service the package provides.
         $this->app->singleton('safe-urls', function () {
@@ -70,7 +70,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__ . '/../config/safe-urls.php' => config_path('SafeUrls.php'),
+            __DIR__.'/../config/safe-urls.php' => config_path('SafeUrls.php'),
         ], 'safe-urls.config');
 
         // Registering package commands.
