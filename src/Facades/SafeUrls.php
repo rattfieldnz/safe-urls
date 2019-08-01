@@ -5,10 +5,9 @@ namespace RattfieldNz\SafeUrls\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class SafeUrls
+ * Class SafeUrls.
  *
  * @author  Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
- * @package RattfieldNz\SafeUrls\Facades
  */
 class SafeUrls extends Facade
 {

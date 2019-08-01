@@ -5,10 +5,9 @@ namespace RattfieldNz\SafeUrls;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class SafeUrlsServiceProvider
+ * Class SafeUrlsServiceProvider.
  *
  * @author Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
- * @package RattfieldNz\SafeUrls
  */
 class SafeUrlsServiceProvider extends ServiceProvider
 {
