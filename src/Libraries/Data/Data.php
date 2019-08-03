@@ -6,9 +6,10 @@ namespace RattfieldNz\SafeUrls\Libraries\Data;
  * Class Data.
  *
  * @category PHP
- * @package  SafeUrls\Libraries\Data
+ *
  * @author   Rob Attfield <emailme@robertattfield.com>
  * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ *
  * @link     https://github.com/rattfieldnz/safe-urls/
  */
 class Data

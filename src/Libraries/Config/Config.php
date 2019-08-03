@@ -6,9 +6,10 @@ namespace RattfieldNz\SafeUrls\Libraries\Config;
  * Class Config.
  *
  * @category PHP
- * @package  SafeUrls\Libraries\Config
+ *
  * @author   Rob Attfield <emailme@robertattfield.com>
  * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ *
  * @link     https://github.com/rattfieldnz/safe-urls/
  */
 class Config
