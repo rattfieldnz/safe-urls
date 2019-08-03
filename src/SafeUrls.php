@@ -8,9 +8,10 @@ namespace RattfieldNz\SafeUrls;
  * The main class used for the SafeUrls package.
  *
  * @category  PHP
- * @package   SafeUrls
+ *
  * @author Rob Attfield <emailme@robertattfield.com>
  * @license https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ *
  * @link https://github.com/rattfieldnz/safe-urls/
  */
 class SafeUrls
@@ -38,20 +39,25 @@ class SafeUrls
      * Checks a given set of URLs with Google's Safe Browsing API.
      *
      * @param array $urls An array of URLs to check.
+     *
      * @return string The set of results, in JSON.
      */
-    public static function check(array $urls): string{
-        return "";
+    public static function check(array $urls): string
+    {
+        return '';
     }
 
     /**
      * Add URLs to existing list for checking.
      *
      * @param array $urls An array of URLs to add.
+     *
      * @return SafeUrls
      */
-    public function add(array $urls): SafeUrls{
+    public function add(array $urls): self
+    {
         $this->urls = array_merge($this->urls, $urls);
+
         return $this;
     }
 
@@ -59,10 +65,13 @@ class SafeUrls
      * Remove URLs from existing list.
      *
      * @param array $urls An array of URLs to remove.
+     *
      * @return SafeUrls
      */
-    public function remove(array $urls): SafeUrls{
+    public function remove(array $urls): self
+    {
         $this->urls = array_diff($this->urls, $urls);
+
         return $this;
     }
 
@@ -70,10 +79,12 @@ class SafeUrls
      * Check to see if the URL has been marked as unsafe.
      *
      * @param string $url The URL to check.
+     *
      * @return bool True if the URL is unsafe, and false if
-     * it is safe,
+     *              it is safe,
      */
-    public function isDangerous(string $url): bool {
+    public function isDangerous(string $url): bool
+    {
         return false;
     }
 
@@ -81,10 +92,12 @@ class SafeUrls
      * Check to see if the URL has been marked as safe.
      *
      * @param string $url The URL to check.
+     *
      * @return bool True if the URL is safe, and false if
-     * it is not safe,
+     *              it is not safe,
      */
-    public function isSafe(string $url){
+    public function isSafe(string $url)
+    {
         return false;
     }
 
@@ -93,8 +106,9 @@ class SafeUrls
      *
      * @return string The dangerous URLs, in JSON format.
      */
-    public function getDangerous(): string {
-        return "";
+    public function getDangerous(): string
+    {
+        return '';
     }
 
     /**
@@ -102,8 +116,9 @@ class SafeUrls
      *
      * @return string The safe URLs, in JSON format.
      */
-    public function getSafe(): string {
-        return "";
+    public function getSafe(): string
+    {
+        return '';
     }
 
     /**
@@ -111,9 +126,11 @@ class SafeUrls
      * Safe Browsing API.
      *
      * @param array $urls
+     *
      * @return array
      */
-    public static function format(array $urls): array {
+    public static function format(array $urls): array
+    {
         return [];
     }
 }

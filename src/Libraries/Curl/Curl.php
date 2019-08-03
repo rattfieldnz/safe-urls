@@ -6,9 +6,10 @@ namespace RattfieldNz\SafeUrls\Libraries\Curl;
  * Class Curl.
  *
  * @category PHP
- * @package  SafeUrls\Libraries\Curl
+ *
  * @author   Rob Attfield <emailme@robertattfield.com>
  * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ *
  * @link     https://github.com/rattfieldnz/safe-urls/
  */
 class Curl
