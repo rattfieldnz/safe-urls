@@ -12,7 +12,7 @@
     "homepage": "https://github.com/rattfieldnz/safe-urls",
     "keywords": ["Laravel", "safe-urls", "Google", "Safe Browsing API"],
     "require": {
-        "php": ">=7.1.3",
+        "php": ">=7.2",
         "ext-curl": "*",
         "ext-json": "*",
         "illuminate/support": "~5"
