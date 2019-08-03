@@ -5,14 +5,18 @@ namespace RattfieldNz\SafeUrls\Libraries\Data;
 /**
  * Class Data.
  *
- * @author  Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
+ * @category PHP
+ * @package  SafeUrls\Libraries\Data
+ * @author   Rob Attfield <emailme@robertattfield.com>
+ * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ * @link     https://github.com/rattfieldnz/safe-urls/
  */
 class Data
 {
     /**
      * Generate payload for Google Safe Browsing API.
      *
-     * @param array $urls
+     * @param array $urls List of URLS to add to payload for checking.
      *
      * @return array The generated payload.
      */
@@ -24,7 +28,7 @@ class Data
     /**
      * Format URLS suitable for use with API.
      *
-     * @param array $urls
+     * @param array $urls List of URLS to format.
      *
      * @return array The formatted URLs.
      */

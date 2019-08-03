@@ -5,7 +5,11 @@ namespace RattfieldNz\SafeUrls\Libraries\Config;
 /**
  * Class Config.
  *
- * @author  Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
+ * @category PHP
+ * @package  SafeUrls\Libraries\Config
+ * @author   Rob Attfield <emailme@robertattfield.com>
+ * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ * @link     https://github.com/rattfieldnz/safe-urls/
  */
 class Config
 {

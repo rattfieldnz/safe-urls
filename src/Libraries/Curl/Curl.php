@@ -5,20 +5,24 @@ namespace RattfieldNz\SafeUrls\Libraries\Curl;
 /**
  * Class Curl.
  *
- * @author  Rob Attfield <emailme@robertattfield.com> <https://github.com/rattfieldnz>
+ * @category PHP
+ * @package  SafeUrls\Libraries\Curl
+ * @author   Rob Attfield <emailme@robertattfield.com>
+ * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ * @link     https://github.com/rattfieldnz/safe-urls/
  */
 class Curl
 {
-    private $ch;
-    private $postUrl;
-    private $headers;
-    private $payload;
-    private $defaultHeaders;
-    private $timeout;
+    private $_ch;
+    private $_postUrl;
+    private $_headers;
+    private $_payload;
+    private $_defaultHeaders;
+    private $_timeout;
 
-    private $data;
-    private $decodedData;
-    private $responseCode;
+    private $_data;
+    private $_decodedData;
+    private $_responseCode;
 
     /**
      * Curl constructor.
@@ -32,24 +36,26 @@ class Curl
      */
     public function __construct(string $postUrl, array $headers, array $payload, int $timeout = 10)
     {
-        $this->ch = curl_init();
-        $this->postUrl = $postUrl;
-        $this->headers = $headers;
-        $this->payload = $payload;
-        $this->timeout = $timeout;
-        self::setDefaultHeaders();
+        $this->_ch = curl_init();
+        $this->_postUrl = $postUrl;
+        $this->_headers = $headers;
+        $this->_payload = $payload;
+        $this->_timeout = $timeout;
+        self::_setDefaultHeaders();
 
-        $this->data = null;
-        $this->decodedData = null;
-        $this->responseCode = null;
+        $this->_data = null;
+        $this->_decodedData = null;
+        $this->_responseCode = null;
     }
 
     /**
      * Sets the default headers to use for CURL request.
+     *
+     * @return void
      */
-    private function setDefaultHeaders(): void
+    private function _setDefaultHeaders(): void
     {
-        $this->defaultHeaders = [
+        $this->_defaultHeaders = [
             'Content-Type: application/json',
             'Connection: Keep-Alive',
         ];
@@ -68,7 +74,7 @@ class Curl
     /**
      * Get the data retrieved from executing CURL request.
      *
-     * @see    \RattfieldNz\SafeUrls\Libraries\Curl\Curl->execute().
+     * @see \RattfieldNz\SafeUrls\Libraries\Curl\Curl->execute().
      *
      * @return array Retrieved data from CURL request.
      */
@@ -80,19 +86,21 @@ class Curl
     /**
      * Decodes a string of JSON decoded data.
      *
-     * @param string $jsonData
+     * @param string $jsonData The JSON date to be decoded.
      *
      * @return mixed|null Decoded JSON data.
      */
-    private function decode(string $jsonData)
+    private function _decode(string $jsonData)
     {
         return !empty($jsonData) ? json_decode($jsonData, true) : null;
     }
 
     /**
      * Sets options of current object's CURL session handle.
+     *
+     * @return void
      */
-    private function set(): void
+    private function _set(): void
     {
     }
 }
