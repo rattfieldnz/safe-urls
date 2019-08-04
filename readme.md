@@ -1,10 +1,13 @@
 # safe-urls
 
+[![PHP Version](https://img.shields.io/badge/php-7.3%2B-green.svg)](https://packagist.org/packages/rattfieldnz/safe-urls) [![PHP Version](https://img.shields.io/badge/php-7.2%2B-green.svg)](https://packagist.org/packages/rattfieldnz/safe-urls) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci] 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rattfieldnz/safe-urls/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rattfieldnz/safe-urls/?branch=master) 
+[![codecov](https://codecov.io/gh/rattfieldnz/safe-urls/branch/master/graph/badge.svg)](https://codecov.io/gh/rattfieldnz/safe-urls)
 
 A Laravel package to check URLs with [Google's Safe Browsing API (look up)](https://developers.google.com/safe-browsing/v4/lookup-api). 
 
