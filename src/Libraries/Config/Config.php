@@ -65,7 +65,7 @@ class Config
     {
         $threatTypes = config('safe-urls.google.threat_types');
 
-        return !empty($threatTypes) ? $threatTypes : [];
+        return !empty($threatTypes) ? $threatTypes : [ ];
     }
 
     /**
@@ -77,7 +77,7 @@ class Config
     {
         $platformTypes = config('safe-urls.google.threat_platform_types');
 
-        return !empty($platformTypes) ? $platformTypes : [];
+        return !empty($platformTypes) ? $platformTypes : [ ];
     }
 
     /**
@@ -89,7 +89,7 @@ class Config
     {
         $threatEntryTypes = config('safe-urls.google.threat_entry_types');
 
-        return !empty($threatEntryTypes) ? $threatEntryTypes : [self::DEFAULT_THREAT_ENTRY_TYPE];
+        return !empty($threatEntryTypes) ? $threatEntryTypes : [ self::DEFAULT_THREAT_ENTRY_TYPE ];
     }
 
     /**
