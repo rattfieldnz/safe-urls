@@ -1,8 +1,10 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace RattfieldNz\SafeUrls\Libraries\Data;
 
-use Orchestra\Testbench\TestCase;;
+use Orchestra\Testbench\TestCase;
 
 class DataTest extends TestCase
 {
