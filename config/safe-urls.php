@@ -21,7 +21,7 @@ return [
     */
     'google' => [
         'api_key'      => env('GOOGLE_API_KEY'),
-        'timeout'      => 10,
+        'timeout'      => env('GOOGLE_CURL_TIMEOUT'),
         'threat_types' => [
             'THREAT_TYPE_UNSPECIFIED',
             'MALWARE',
@@ -44,7 +44,7 @@ return [
             'ALL_PLATFORMS',
             'CHROME',
         ],
-        'clientId'      => 'rattfieldnz-safeurls',
-        'clientVersion' => '1.0',
+        'clientId'      => env('GOOGLE_CLIENT_ID'),
+        'clientVersion' => env('GOOGLE_CLIENT_VERSION'),
     ],
 ];
