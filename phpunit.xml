@@ -32,5 +32,8 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
+        <env name="GOOGLE_CLIENT_VERSION" value="1.0" />
+        <env name="GOOGLE_CLIENT_ID" value="rattfieldnz-safeurls" />
+        <env name="GOOGLE_CURL_TIMEOUT" value="10" />
     </php>
 </phpunit>

@@ -36,7 +36,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "RattfieldNz\\SafeUrls\\Tests\\": "tests"
+            "RattfieldNz\\SafeUrls\\Tests\\": "tests/"
         }
     },
     "extra": {

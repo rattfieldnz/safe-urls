@@ -7,15 +7,18 @@ namespace RattfieldNz\SafeUrls\Libraries\Config;
  *
  * @category PHP
  *
- * @author   Rob Attfield <emailme@robertattfield.com>
- * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ * @author  Rob Attfield <emailme@robertattfield.com>
+ * @license https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
  *
- * @link     https://github.com/rattfieldnz/safe-urls/
+ * @link https://github.com/rattfieldnz/safe-urls/
  */
 class Config
 {
     // Default entry type
     public const DEFAULT_THREAT_ENTRY_TYPE = 'URL';
+
+    // Default timeout for API call.
+    public const DEFAULT_TIMEOUT = 10;
 
     /**
      * Retrieve the Google API key.
@@ -24,7 +27,8 @@ class Config
      */
     public static function googleApiKey(): string
     {
-        return '';
+        $key = config('safe-urls.google.api_key');
+        return !empty($key) ? $key : "";
     }
 
     /**
@@ -34,7 +38,8 @@ class Config
      */
     public static function clientId(): string
     {
-        return '';
+        $clientId = config('safe-urls.google.clientId');
+        return !empty($clientId) ? $clientId : "";
     }
 
     /**
@@ -44,7 +49,8 @@ class Config
      */
     public static function clientVersion(): string
     {
-        return '';
+        $clientVersion = config('safe-urls.google.clientVersion');
+        return !empty($clientVersion) ? $clientVersion : "";
     }
 
     /**
@@ -54,7 +60,9 @@ class Config
      */
     public static function threatTypes(): array
     {
-        return [];
+        $threatTypes = config('safe-urls.google.threat_types');
+        return !empty($threatTypes) ? $threatTypes : [];
+
     }
 
     /**
@@ -64,7 +72,9 @@ class Config
      */
     public static function platformTypes(): array
     {
-        return [];
+        $platformTypes = config('safe-urls.google.threat_platform_types');
+        return !empty($platformTypes) ? $platformTypes : [];
+
     }
 
     /**
@@ -74,7 +84,8 @@ class Config
      */
     public static function threatEntryTypes(): array
     {
-        return [self::DEFAULT_THREAT_ENTRY_TYPE];
+        $threatEntryTypes = config('safe-urls.google.threat_entry_types');
+        return !empty($threatEntryTypes) ? $threatEntryTypes : [self::DEFAULT_THREAT_ENTRY_TYPE];
     }
 
     /**
@@ -84,6 +95,7 @@ class Config
      */
     public static function curlTimeout(): int
     {
-        return 10;
+        $timeout = config('safe-urls.google.timeout');
+        return !empty($timeout) ? intval($timeout) : self::DEFAULT_TIMEOUT;
     }
 }
