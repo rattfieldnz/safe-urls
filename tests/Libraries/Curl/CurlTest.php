@@ -1,8 +1,10 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace RattfieldNz\SafeUrls\Libraries\Curl;
 
-use Orchestra\Testbench\TestCase;;
+use Orchestra\Testbench\TestCase;
 
 class CurlTest extends TestCase
 {
