@@ -45,7 +45,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/safe-urls.php', 'safe-urls');
 
         // Register the service the package provides.
-        $this->app->singleton('safe-urls', function () {
+        $this->app->singleton('safe-urls', function() {
             return new SafeUrls();
         });
     }
@@ -57,7 +57,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['safe-urls'];
+        return [ 'safe-urls' ];
     }
 
     /**
@@ -73,6 +73,6 @@ class SafeUrlsServiceProvider extends ServiceProvider
         ], 'safe-urls.config');
 
         // Registering package commands.
-        $this->commands(['safe-urls']);
+        $this->commands([ 'safe-urls' ]);
     }
 }

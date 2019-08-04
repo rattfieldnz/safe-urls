@@ -23,7 +23,7 @@ class Data
      */
     public static function payload(array $urls): array
     {
-        return [];
+        return [ ];
     }
 
     /**
@@ -35,6 +35,6 @@ class Data
      */
     public static function formatUrls(array $urls): array
     {
-        return [];
+        return [ ];
     }
 }

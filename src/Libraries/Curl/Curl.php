@@ -81,7 +81,7 @@ class Curl
      */
     public function getData()
     {
-        return [];
+        return [ ];
     }
 
     /**

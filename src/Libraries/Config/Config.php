@@ -54,7 +54,7 @@ class Config
      */
     public static function threatTypes(): array
     {
-        return [];
+        return [ ];
     }
 
     /**
@@ -64,7 +64,7 @@ class Config
      */
     public static function platformTypes(): array
     {
-        return [];
+        return [ ];
     }
 
     /**
@@ -74,7 +74,7 @@ class Config
      */
     public static function threatEntryTypes(): array
     {
-        return [self::DEFAULT_THREAT_ENTRY_TYPE];
+        return [ self::DEFAULT_THREAT_ENTRY_TYPE ];
     }
 
     /**
