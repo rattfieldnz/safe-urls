@@ -28,7 +28,8 @@ class Config
     public static function googleApiKey(): string
     {
         $key = config('safe-urls.google.api_key');
-        return !empty($key) ? $key : "";
+
+        return !empty($key) ? $key : '';
     }
 
     /**
@@ -39,7 +40,8 @@ class Config
     public static function clientId(): string
     {
         $clientId = config('safe-urls.google.clientId');
-        return !empty($clientId) ? $clientId : "";
+
+        return !empty($clientId) ? $clientId : '';
     }
 
     /**
@@ -50,7 +52,8 @@ class Config
     public static function clientVersion(): string
     {
         $clientVersion = config('safe-urls.google.clientVersion');
-        return !empty($clientVersion) ? $clientVersion : "";
+
+        return !empty($clientVersion) ? $clientVersion : '';
     }
 
     /**
@@ -61,8 +64,8 @@ class Config
     public static function threatTypes(): array
     {
         $threatTypes = config('safe-urls.google.threat_types');
-        return !empty($threatTypes) ? $threatTypes : [];
 
+        return !empty($threatTypes) ? $threatTypes : [];
     }
 
     /**
@@ -73,8 +76,8 @@ class Config
     public static function platformTypes(): array
     {
         $platformTypes = config('safe-urls.google.threat_platform_types');
-        return !empty($platformTypes) ? $platformTypes : [];
 
+        return !empty($platformTypes) ? $platformTypes : [];
     }
 
     /**
@@ -85,6 +88,7 @@ class Config
     public static function threatEntryTypes(): array
     {
         $threatEntryTypes = config('safe-urls.google.threat_entry_types');
+
         return !empty($threatEntryTypes) ? $threatEntryTypes : [self::DEFAULT_THREAT_ENTRY_TYPE];
     }
 
@@ -96,6 +100,7 @@ class Config
     public static function curlTimeout(): int
     {
         $timeout = config('safe-urls.google.timeout');
+
         return !empty($timeout) ? intval($timeout) : self::DEFAULT_TIMEOUT;
     }
 }
