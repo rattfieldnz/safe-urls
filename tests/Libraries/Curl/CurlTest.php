@@ -26,8 +26,8 @@ class CurlTest extends TestCase
     protected function setUp(): void
     {
         $this->postUrl = '';
-        $this->headers = [ ];
-        $this->payload = [ ];
+        $this->headers = [];
+        $this->payload = [];
         $this->timeout = 10;
         $this->curl = new Curl(
             $this->postUrl,
