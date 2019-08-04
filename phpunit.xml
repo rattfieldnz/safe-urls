@@ -15,13 +15,13 @@
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory>./src/</directory>
+            <directory suffix=".php">./src/</directory>
+            <exclude>
+                <directory>./report</directory>
+                <directory suffix=".php">./tests</directory>
+                <directory>./vendor</directory>
+            </exclude>
         </whitelist>
-        <exclude>
-            <directory>./report</directory>
-            <directory>./tests</directory>
-            <directory>./vendor</directory>
-        </exclude>
     </filter>
     <logging>
         <log type="coverage-html" target="./report" lowUpperBound="50" highLowerBound="80" />
