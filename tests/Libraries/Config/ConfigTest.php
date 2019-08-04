@@ -9,7 +9,6 @@ use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class ConfigTest extends TestCase
 {
-
     protected function setUp(): void
     {
         parent::setUp();
@@ -50,7 +49,6 @@ class ConfigTest extends TestCase
      */
     public function testAllThreatTypes()
     {
-
         $expected = [
             'THREAT_TYPE_UNSPECIFIED',
             'MALWARE',
@@ -68,7 +66,6 @@ class ConfigTest extends TestCase
      */
     public function testAllPlatformTypes()
     {
-
         $expected = [
             'PLATFORM_TYPE_UNSPECIFIED',
             'WINDOWS',
@@ -90,7 +87,6 @@ class ConfigTest extends TestCase
      */
     public function testAllThreatEntryTypes()
     {
-
         $expected = [
             'URL',
             'THREAT_ENTRY_TYPE_UNSPECIFIED',
@@ -105,11 +101,8 @@ class ConfigTest extends TestCase
      */
     public function testCurlTimeout()
     {
-
         $expected = env('GOOGLE_CURL_TIMEOUT');
         $actual = Config::curlTimeout();
         $this->assertEquals($expected, $actual);
-
     }
-
 }

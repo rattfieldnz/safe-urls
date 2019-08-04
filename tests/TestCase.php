@@ -2,15 +2,16 @@
 
 namespace RattfieldNz\SafeUrls\Tests;
 
-use RattfieldNz\SafeUrls\SafeUrlsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use RattfieldNz\SafeUrls\SafeUrlsServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
     /**
-     * add the package provider
+     * add the package provider.
      *
      * @param $app
+     *
      * @return array
      */
     protected function getPackageProviders($app)
