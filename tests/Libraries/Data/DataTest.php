@@ -98,7 +98,8 @@ class DataTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    private static function payload(array $urls): array{
+    private static function payload(array $urls): array
+    {
         return [
             'client' => [
                 'clientId'      => Config::clientId(),
