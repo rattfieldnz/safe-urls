@@ -14,11 +14,17 @@ namespace RattfieldNz\SafeUrls\Libraries\Config;
  */
 class Config
 {
-    // Default entry type
-    public const DEFAULT_THREAT_ENTRY_TYPE = 'URL';
-
     // Default timeout for API call.
     public const DEFAULT_TIMEOUT = 10;
+
+    // Default threat types.
+    public const DEFAULT_THREAT_TYPES = ['THREAT_TYPE_UNSPECIFIED'];
+
+    // Default threst entry types.
+    public const DEFAULT_THREAT_ENTRY_TYPES = ['THREAT_ENTRY_TYPE_UNSPECIFIED'];
+
+    // Default threat platform types.
+    public const DEFAULT_THREAT_PLATFORM_TYPES = ['PLATFORM_TYPE_UNSPECIFIED'];
 
     /**
      * Retrieve the Google API key.
@@ -65,7 +71,7 @@ class Config
     {
         $threatTypes = config('safe-urls.google.threat_types');
 
-        return !empty($threatTypes) ? $threatTypes : [];
+        return !empty($threatTypes) ? $threatTypes : self::DEFAULT_THREAT_TYPES;
     }
 
     /**
@@ -77,7 +83,7 @@ class Config
     {
         $platformTypes = config('safe-urls.google.threat_platform_types');
 
-        return !empty($platformTypes) ? $platformTypes : [];
+        return !empty($platformTypes) ? $platformTypes : self::DEFAULT_THREAT_PLATFORM_TYPES;
     }
 
     /**
@@ -89,7 +95,7 @@ class Config
     {
         $threatEntryTypes = config('safe-urls.google.threat_entry_types');
 
-        return !empty($threatEntryTypes) ? $threatEntryTypes : [self::DEFAULT_THREAT_ENTRY_TYPE];
+        return !empty($threatEntryTypes) ? $threatEntryTypes : self::DEFAULT_THREAT_ENTRY_TYPES;
     }
 
     /**
