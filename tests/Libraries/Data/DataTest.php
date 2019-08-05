@@ -32,18 +32,7 @@ class DataTest extends TestCase
 
     public function testPayloadMultipleUrls()
     {
-        $expected = [
-            'client' => [
-                'clientId'      => Config::clientId(),
-                'clientVersion' => Config::clientVersion(),
-            ],
-            'threatInfo' => [
-                'threatTypes'      => Config::threatTypes(),
-                'platformTypes'    => Config::platformTypes(),
-                'threatEntryTypes' => Config::threatEntryTypes(),
-                'threatEntries'    => $this->formattedUrls,
-            ],
-        ];
+        $expected = self::payload($this->formattedUrls);
 
         $actual = Data::payload($this->urls);
         $this->assertEquals($expected, $actual);
@@ -59,18 +48,7 @@ class DataTest extends TestCase
             'https://www.google.com',
         ];
 
-        $expected = [
-            'client' => [
-                'clientId'      => Config::clientId(),
-                'clientVersion' => Config::clientVersion(),
-            ],
-            'threatInfo' => [
-                'threatTypes'      => Config::threatTypes(),
-                'platformTypes'    => Config::platformTypes(),
-                'threatEntryTypes' => Config::threatEntryTypes(),
-                'threatEntries'    => $formattedUrl,
-            ],
-        ];
+        $expected = self::payload($formattedUrl);
 
         $actual = Data::payload($url);
         $this->assertEquals($expected, $actual);
@@ -84,18 +62,7 @@ class DataTest extends TestCase
 
         $urls = [];
 
-        $expected = [
-            'client' => [
-                'clientId'      => Config::clientId(),
-                'clientVersion' => Config::clientVersion(),
-            ],
-            'threatInfo' => [
-                'threatTypes'      => Config::threatTypes(),
-                'platformTypes'    => Config::platformTypes(),
-                'threatEntryTypes' => Config::threatEntryTypes(),
-                'threatEntries'    => $formattedUrls,
-            ],
-        ];
+        $expected = self::payload($formattedUrls);
 
         $actual = Data::payload($urls);
         $this->assertEquals($expected, $actual);
@@ -129,5 +96,20 @@ class DataTest extends TestCase
 
         $actual = Data::formatUrls($urls);
         $this->assertEquals($expected, $actual);
+    }
+
+    private static function payload(array $urls): array{
+        return [
+            'client' => [
+                'clientId'      => Config::clientId(),
+                'clientVersion' => Config::clientVersion(),
+            ],
+            'threatInfo' => [
+                'threatTypes'      => Config::threatTypes(),
+                'platformTypes'    => Config::platformTypes(),
+                'threatEntryTypes' => Config::threatEntryTypes(),
+                'threatEntries'    => $urls,
+            ],
+        ];
     }
 }
