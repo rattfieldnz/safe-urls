@@ -9,10 +9,10 @@ use RattfieldNz\SafeUrls\Libraries\Config\Config;
  *
  * @category PHP
  *
- * @author   Rob Attfield <emailme@robertattfield.com>
- * @license  https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
+ * @author  Rob Attfield <emailme@robertattfield.com>
+ * @license https://github.com/rattfieldnz/safe-urls/blob/master/license.md MIT
  *
- * @link     https://github.com/rattfieldnz/safe-urls/
+ * @link https://github.com/rattfieldnz/safe-urls/
  */
 class Data
 {
