@@ -22,7 +22,7 @@ class DataTest extends TestCase
         'https://github.com',
         'https://github.styleci.io',
         'https://travis-ci.org',
-        'https://packagist.org'
+        'https://packagist.org',
     ];
 
     protected function setUp(): void
@@ -34,22 +34,23 @@ class DataTest extends TestCase
     {
         $expected = [
             'client' => [
-                'clientId' => Config::clientId(),
+                'clientId'      => Config::clientId(),
                 'clientVersion' => Config::clientVersion(),
             ],
             'threatInfo' => [
-                "threatTypes" => Config::threatTypes(),
-                "platformTypes" => Config::platformTypes(),
-                "threatEntryTypes" => Config::threatEntryTypes(),
-                "threatEntries" => $this->formattedUrls,
-            ]
+                'threatTypes'      => Config::threatTypes(),
+                'platformTypes'    => Config::platformTypes(),
+                'threatEntryTypes' => Config::threatEntryTypes(),
+                'threatEntries'    => $this->formattedUrls,
+            ],
         ];
 
         $actual = Data::payload($this->urls);
         $this->assertEquals($expected, $actual);
     }
 
-    public function testPayloadSingleUrl(){
+    public function testPayloadSingleUrl()
+    {
         $formattedUrl = [
             ['url' => 'https://www.google.com'],
         ];
@@ -60,22 +61,23 @@ class DataTest extends TestCase
 
         $expected = [
             'client' => [
-                'clientId' => Config::clientId(),
+                'clientId'      => Config::clientId(),
                 'clientVersion' => Config::clientVersion(),
             ],
             'threatInfo' => [
-                "threatTypes" => Config::threatTypes(),
-                "platformTypes" => Config::platformTypes(),
-                "threatEntryTypes" => Config::threatEntryTypes(),
-                "threatEntries" => $formattedUrl,
-            ]
+                'threatTypes'      => Config::threatTypes(),
+                'platformTypes'    => Config::platformTypes(),
+                'threatEntryTypes' => Config::threatEntryTypes(),
+                'threatEntries'    => $formattedUrl,
+            ],
         ];
 
         $actual = Data::payload($url);
         $this->assertEquals($expected, $actual);
     }
 
-    public function testPayloadNoUrls(){
+    public function testPayloadNoUrls()
+    {
         $formattedUrls = [
             //['url' => ''],
         ];
@@ -84,43 +86,43 @@ class DataTest extends TestCase
 
         $expected = [
             'client' => [
-                'clientId' => Config::clientId(),
+                'clientId'      => Config::clientId(),
                 'clientVersion' => Config::clientVersion(),
             ],
             'threatInfo' => [
-                "threatTypes" => Config::threatTypes(),
-                "platformTypes" => Config::platformTypes(),
-                "threatEntryTypes" => Config::threatEntryTypes(),
-                "threatEntries" => $formattedUrls,
-            ]
+                'threatTypes'      => Config::threatTypes(),
+                'platformTypes'    => Config::platformTypes(),
+                'threatEntryTypes' => Config::threatEntryTypes(),
+                'threatEntries'    => $formattedUrls,
+            ],
         ];
 
         $actual = Data::payload($urls);
         $this->assertEquals($expected, $actual);
     }
 
-    public function testFormatUrlsMultiple(){
-
+    public function testFormatUrlsMultiple()
+    {
         $expected = $this->formattedUrls;
 
         $actual = Data::formatUrls($this->urls);
         $this->assertEquals($expected, $actual);
     }
 
-    public function testFormatUrlsSingle(){
-
+    public function testFormatUrlsSingle()
+    {
         $url = ['https://www.google.com'];
 
         $expected = [
-            ['url' => 'https://www.google.com']
+            ['url' => 'https://www.google.com'],
         ];
 
         $actual = Data::formatUrls($url);
         $this->assertEquals($expected, $actual);
     }
 
-    public function testFormatUrlsNone(){
-
+    public function testFormatUrlsNone()
+    {
         $urls = [];
 
         $expected = [];
