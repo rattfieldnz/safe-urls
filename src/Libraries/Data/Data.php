@@ -27,15 +27,15 @@ class Data
     {
         return [
             'client' => [
-                'clientId' => Config::clientId(),
+                'clientId'      => Config::clientId(),
                 'clientVersion' => Config::clientVersion(),
             ],
             'threatInfo' => [
-                "threatTypes" => Config::threatTypes(),
-                "platformTypes" => Config::platformTypes(),
-                "threatEntryTypes" => Config::threatEntryTypes(),
-                "threatEntries" => self::formatUrls($urls),
-            ]
+                'threatTypes'      => Config::threatTypes(),
+                'platformTypes'    => Config::platformTypes(),
+                'threatEntryTypes' => Config::threatEntryTypes(),
+                'threatEntries'    => self::formatUrls($urls),
+            ],
         ];
     }
 
@@ -52,6 +52,7 @@ class Data
         foreach ($urls as $url) {
             $formattedUrls[] = ['url' => $url];
         }
+
         return $formattedUrls;
     }
 }
