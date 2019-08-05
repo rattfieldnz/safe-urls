@@ -2,6 +2,8 @@
 
 namespace RattfieldNz\SafeUrls\Libraries\Data;
 
+use RattfieldNz\SafeUrls\Libraries\Config\Config;
+
 /**
  * Class Data.
  *
@@ -23,7 +25,18 @@ class Data
      */
     public static function payload(array $urls): array
     {
-        return [];
+        return [
+            'client' => [
+                'clientId' => Config::clientId(),
+                'clientVersion' => Config::clientVersion(),
+            ],
+            'threatInfo' => [
+                "threatTypes" => Config::threatTypes(),
+                "platformTypes" => Config::platformTypes(),
+                "threatEntryTypes" => Config::threatEntryTypes(),
+                "threatEntries" => self::formatUrls($urls),
+            ]
+        ];
     }
 
     /**
@@ -35,6 +48,10 @@ class Data
      */
     public static function formatUrls(array $urls): array
     {
-        return [];
+        $formattedUrls = [];
+        foreach ($urls as $url) {
+            $formattedUrls[] = ['url' => $url];
+        }
+        return $formattedUrls;
     }
 }
