@@ -29,8 +29,10 @@ Please see the [changelog](changelog.md) for more information on what has change
 
 ## Testing
 
+From inside the root folder of this package:
+
 ``` bash
-$ composer test
+$ vendor/bin/phpunit --coverage-clover coverage.xml
 ```
 
 ## Contributing
