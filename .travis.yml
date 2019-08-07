@@ -4,12 +4,13 @@ php:
 - 7.3
 before_script:
 - cp .env.travis .env
+- chmod u+x run_phpunit
 - travis_retry composer self-update
 - travis_retry composer install --prefer-source --no-interaction
 before_install:
 - mysql -e 'CREATE DATABASE safeurls_test;'
 script:
-- vendor/bin/phpunit --coverage-clover=coverage.xml
+- ./run_phpunit
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 services:

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Second argument is test configuration and is required.
+if [ -z "$1" ] && [ -z "${GOOGLE_API_KEY}" ]; then
+  echo 'Please provide a Google Safebrowsing API key.'
+  exit
+fi
+
+# Set Google Safebrowsing API key for use with PHPUnit.
+if [ -z "${GOOGLE_API_KEY}" ]; then
+  export GOOGLE_API_KEY=${1}
+fi
+
+vendor/bin/phpunit --coverage-clover coverage.xml

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1564995994">
-  <project timestamp="1564995994">
+<coverage generated="1565157007">
+  <project timestamp="1565157007">
     <package name="RattfieldNz\SafeUrls\Facades">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Facades/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\Facades\SafeUrls" namespace="RattfieldNz\SafeUrls\Facades" category="PHP">
