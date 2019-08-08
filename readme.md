@@ -32,8 +32,9 @@ Please see the [changelog](changelog.md) for more information on what has change
 From inside the root folder of this package:
 
 ``` bash
-$ vendor/bin/phpunit --coverage-clover coverage.xml
+$ ./run_phpunit YOUR_GOOGLE_API_KEY
 ```
+Replace YOUR_GOOGLE_API_KEY with your key. Get one by visiting [https://developers.google.com/safe-browsing/v4/get-started](https://developers.google.com/safe-browsing/v4/get-started).
 
 ## Contributing
 
