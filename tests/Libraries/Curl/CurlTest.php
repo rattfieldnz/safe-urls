@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace RattfieldNz\SafeUrls\Libraries\Curl;
 
-use RattfieldNz\SafeUrls\Tests\TestCase;
 use RattfieldNz\SafeUrls\Libraries\Config\Config;
 use RattfieldNz\SafeUrls\Libraries\Data\Data;
 use RattfieldNz\SafeUrls\Libraries\Defaults;
+use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class CurlTest extends TestCase
 {
-
     protected function setUp(): void
     {
         parent::setUp();
@@ -19,20 +18,19 @@ class CurlTest extends TestCase
 
     public function testMalwareSocialEngineeringAnyPlatformUrl()
     {
-
-        $postUrl = Defaults::GOOGLE_API_URL . Config::googleApiKey();
+        $postUrl = Defaults::GOOGLE_API_URL.Config::googleApiKey();
 
         $threatTypes = [
             'MALWARE',
-            'SOCIAL_ENGINEERING'
+            'SOCIAL_ENGINEERING',
         ];
 
         $platformTypes = [
-            'ANY_PLATFORM'
+            'ANY_PLATFORM',
         ];
 
         $threatEntryTypes = [
-            'URL'
+            'URL',
         ];
 
         $payload = Data::payload(
@@ -41,7 +39,7 @@ class CurlTest extends TestCase
                 'https://testsafebrowsing.appspot.com/s/malware.html',
                 'http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/',
                 'http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/SOCIAL_ENGINEERING/URL/',
-                "http://malware.testing.google.test/testing/malware/"
+                'http://malware.testing.google.test/testing/malware/',
             ],
             $threatTypes,
             $platformTypes,
@@ -67,9 +65,8 @@ class CurlTest extends TestCase
             //
             //$this->assertEquals($expected, $actual);
             $this->assertTrue(true);
-
         } catch (\ErrorException $e) {
-            $this->fail("Curl creation failed. Error message: " . $e->getMessage());
+            $this->fail('Curl creation failed. Error message: '.$e->getMessage());
         }
     }
 }

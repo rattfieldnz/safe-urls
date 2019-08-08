@@ -3,7 +3,6 @@
 namespace RattfieldNz\SafeUrls\Libraries\Curl;
 
 use Curl\Curl as PhpCurl;
-use RattfieldNz\SafeUrls\Libraries\Config\Config;
 
 /**
  * Class Curl.
@@ -55,6 +54,7 @@ class Curl
         $this->_curl->setOpt(CURLOPT_HTTPHEADER, $this->_defaultHeaders);
         $this->_curl->setOpt(CURLOPT_POSTFIELDS, json_encode($this->_payload));
         $this->_curl->post($this->_postUrl);
+
         return $this->_curl;
     }
 
@@ -62,14 +62,15 @@ class Curl
      * Get the data retrieved from executing CURL request.
      *
      * @return array|string
+     *
      * @see    \RattfieldNz\SafeUrls\Libraries\Curl\Curl->execute().
      */
     public function getData()
     {
         $dataObject = $this->execute();
         $data = [
-            'status' => $dataObject->getHttpStatus(),
-            'response' => json_decode($dataObject->response, true)
+            'status'   => $dataObject->getHttpStatus(),
+            'response' => json_decode($dataObject->response, true),
         ];
 
         return json_encode($data);
