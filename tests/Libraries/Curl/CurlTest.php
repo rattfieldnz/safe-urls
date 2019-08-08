@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace RattfieldNz\SafeUrls\Libraries\Curl;
 
-use RattfieldNz\SafeUrls\Libraries\Config\Config;
 use RattfieldNz\SafeUrls\Libraries\Data\Data;
-use RattfieldNz\SafeUrls\Libraries\Defaults;
 use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class CurlTest extends TestCase
@@ -18,7 +16,7 @@ class CurlTest extends TestCase
 
     public function testMalwareSocialEngineeringAnyPlatformUrl()
     {
-        $postUrl = Defaults::GOOGLE_API_URL.Config::googleApiKey();
+        $postUrl = Data::googleApiUrl();
 
         $threatTypes = [
             'MALWARE',
@@ -47,7 +45,7 @@ class CurlTest extends TestCase
         );
 
         try {
-            $curl = new Curl($postUrl, $payload);
+            $curl = new Curl($payload);
 
             // Response output in Postman (https://www.getpostman.com) based on provided values above.
             $expected = '{ "status": 200, "response": { "matches": [ { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/phishing.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/malware.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/SOCIAL_ENGINEERING/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" } ] } }';
@@ -68,5 +66,11 @@ class CurlTest extends TestCase
         } catch (\ErrorException $e) {
             $this->fail('Curl creation failed. Error message: '.$e->getMessage());
         }
+    }
+
+    public function testPhpCurlExtensionLoaded()
+    {
+
+        $this->assertTrue(extension_loaded('curl'));
     }
 }

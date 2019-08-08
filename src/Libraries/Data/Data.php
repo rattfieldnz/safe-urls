@@ -58,4 +58,15 @@ class Data
 
         return $formattedUrls;
     }
+
+    /**
+     * Get Google Safebrowing API URL with key.
+     *
+     * @return string
+     */
+    public static function googleApiUrl()
+    {
+        return 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' .
+            Config::googleApiKey();
+    }
 }

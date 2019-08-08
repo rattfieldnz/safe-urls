@@ -2,6 +2,10 @@
 
 namespace RattfieldNz\SafeUrls;
 
+use RattfieldNz\SafeUrls\Libraries\Data\Data;
+use RattfieldNz\SafeUrls\Libraries\Curl\Curl;
+use RattfieldNz\SafeUrls\Libraries\Traits\StaticCalling;
+
 /**
  * Class SafeUrls.
  *
@@ -16,6 +20,8 @@ namespace RattfieldNz\SafeUrls;
  */
 class SafeUrls
 {
+    use StaticCalling;
+
     /**
      * @var array Variable to hold list of urls to check.
      */
@@ -39,12 +45,35 @@ class SafeUrls
      * Checks a given set of URLs with Google's Safe Browsing API.
      *
      * @param array $urls An array of URLs to check.
+     * @param bool $resultsAsArray Determines whether results will be returned as array or JSON.
      *
-     * @return string The set of results, in JSON.
+     * @return string|array The set of results, in JSON.
+     * @throws \ErrorException
      */
-    public static function check(array $urls): string
+    public static function check(array $urls, bool $resultsAsArray = false)
     {
-        return '';
+        $payload = Data::payload($urls);
+
+        $data = (new Curl($payload))->getData();
+        return $resultsAsArray == false ? $data : json_decode($data, true);
+
+    }
+
+    /**
+     * Function used to test 'check' static method with mocks in PHPUnit.
+     *
+     * @param array $urls An array of URLs to check.
+     *
+     * @return array|string The set of results, in JSON.
+     */
+    public function checkCallStatic(array $urls){
+
+        return $this->callStatic(SafeUrls::class, "check", $urls);
+    }
+
+    public function execute(){
+        $this->results = SafeUrls::check($this->urls);
+        return $this;
     }
 
     /**
@@ -70,11 +99,25 @@ class SafeUrls
      */
     public function remove(array $urls): self
     {
-        $this->urls = array_diff($this->urls, $urls);
+        $this->urls = array_values(array_diff($this->urls, $urls));
 
         return $this;
     }
 
+    /**
+     * Get the URLs currently saved.
+     *
+     * @param bool $asArray Determines whether results to be returned as array or JSON.
+     *
+     * @return array|string
+     */
+    public function getCurrentUrls(bool $asArray = false){
+        return $asArray == false ? json_encode($this->urls): $this->urls;
+    }
+
+    public function getResults(){
+        return $this->results;
+    }
     /**
      * Check to see if the URL has been marked as unsafe.
      *
@@ -85,52 +128,16 @@ class SafeUrls
      */
     public function isDangerous(string $url): bool
     {
+        $data = json_decode((string)$this->results);
+        $matches = empty($data->response["matches"]) ? null : $data->response["matches"];
+        if(empty($matches)){
+            return false;
+        }
+        foreach ($matches as $result) {
+            if ($result->threat->url == $url) {
+                return true;
+            }
+        }
         return false;
-    }
-
-    /**
-     * Check to see if the URL has been marked as safe.
-     *
-     * @param string $url The URL to check.
-     *
-     * @return bool True if the URL is safe, and false if
-     *              it is not safe,
-     */
-    public function isSafe(string $url)
-    {
-        return false;
-    }
-
-    /**
-     * Gets currently dangerous URLs, in JSON format.
-     *
-     * @return string The dangerous URLs, in JSON format.
-     */
-    public function getDangerous(): string
-    {
-        return '';
-    }
-
-    /**
-     * Gets currently safe URLs, in JSON format.
-     *
-     * @return string The safe URLs, in JSON format.
-     */
-    public function getSafe(): string
-    {
-        return '';
-    }
-
-    /**
-     * Format a given list of URLs for use with Google's
-     * Safe Browsing API.
-     *
-     * @param array $urls
-     *
-     * @return array
-     */
-    public static function format(array $urls): array
-    {
-        return [];
     }
 }

@@ -112,7 +112,6 @@ class SafeUrlsServiceProvider extends ServiceProvider
             }
             $array[$key] = $this->mergeConfig($value, $merging[$key]);
         }
-
         return $array;
     }
 }

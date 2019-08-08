@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /var/www/testproject/packages/rattfieldnz/safe-urls/src/Libraries/Config</title>
+  <title>Dashboard for /var/www/testproject/packages/rattfieldnz/safe-urls/src/Libraries/Traits</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../../.css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="../../.css/nv.d3.min.css" rel="stylesheet" type="text/css">
@@ -18,7 +18,7 @@
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../../index.html">/var/www/testproject/packages/rattfieldnz/safe-urls/src</a></li>
          <li class="breadcrumb-item"><a href="../index.html">Libraries</a></li>
-         <li class="breadcrumb-item"><a href="index.html">Config</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Traits</a></li>
          <li class="breadcrumb-item active">(Dashboard)</li>
 
        </ol>
@@ -174,7 +174,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,7], "Method Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,1], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -224,7 +224,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,14,"<a href=\"Config.php.html#15\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"StaticCalling.php.html#5\">StaticCalling<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -248,7 +248,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,2,"<a href=\"Config.php.html#34\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config::googleApiKey<\/a>"],[100,2,"<a href=\"Config.php.html#46\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config::clientId<\/a>"],[100,2,"<a href=\"Config.php.html#58\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config::clientVersion<\/a>"],[100,2,"<a href=\"Config.php.html#70\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config::threatTypes<\/a>"],[100,2,"<a href=\"Config.php.html#82\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config::platformTypes<\/a>"],[100,2,"<a href=\"Config.php.html#94\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config::threatEntryTypes<\/a>"],[100,2,"<a href=\"Config.php.html#106\">RattfieldNz\\SafeUrls\\Libraries\\Config\\Config::curlTimeout<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"StaticCalling.php.html#18\">StaticCalling::callStatic<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

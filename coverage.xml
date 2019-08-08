@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565223637">
-  <project timestamp="1565223637">
+<coverage generated="1565258691">
+  <project timestamp="1565258691">
     <package name="RattfieldNz\SafeUrls\Facades">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Facades/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\Facades\SafeUrls" namespace="RattfieldNz\SafeUrls\Facades" category="PHP">
@@ -16,24 +16,24 @@
         <class name="RattfieldNz\SafeUrls\Libraries\Config\Config" namespace="RattfieldNz\SafeUrls\Libraries\Config" category="PHP">
           <metrics complexity="14" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="21" coveredelements="21"/>
         </class>
-        <line num="34" type="method" name="googleApiKey" visibility="public" complexity="2" crap="2" count="2"/>
-        <line num="36" type="stmt" count="2"/>
-        <line num="38" type="stmt" count="2"/>
-        <line num="46" type="method" name="clientId" visibility="public" complexity="2" crap="2" count="5"/>
-        <line num="48" type="stmt" count="5"/>
-        <line num="50" type="stmt" count="5"/>
-        <line num="58" type="method" name="clientVersion" visibility="public" complexity="2" crap="2" count="5"/>
-        <line num="60" type="stmt" count="5"/>
-        <line num="62" type="stmt" count="5"/>
-        <line num="70" type="method" name="threatTypes" visibility="public" complexity="2" crap="2" count="4"/>
-        <line num="72" type="stmt" count="4"/>
-        <line num="74" type="stmt" count="4"/>
-        <line num="82" type="method" name="platformTypes" visibility="public" complexity="2" crap="2" count="4"/>
-        <line num="84" type="stmt" count="4"/>
-        <line num="86" type="stmt" count="4"/>
-        <line num="94" type="method" name="threatEntryTypes" visibility="public" complexity="2" crap="2" count="4"/>
-        <line num="96" type="stmt" count="4"/>
-        <line num="98" type="stmt" count="4"/>
+        <line num="34" type="method" name="googleApiKey" visibility="public" complexity="2" crap="2" count="7"/>
+        <line num="36" type="stmt" count="7"/>
+        <line num="38" type="stmt" count="7"/>
+        <line num="46" type="method" name="clientId" visibility="public" complexity="2" crap="2" count="10"/>
+        <line num="48" type="stmt" count="10"/>
+        <line num="50" type="stmt" count="10"/>
+        <line num="58" type="method" name="clientVersion" visibility="public" complexity="2" crap="2" count="10"/>
+        <line num="60" type="stmt" count="10"/>
+        <line num="62" type="stmt" count="10"/>
+        <line num="70" type="method" name="threatTypes" visibility="public" complexity="2" crap="2" count="9"/>
+        <line num="72" type="stmt" count="9"/>
+        <line num="74" type="stmt" count="9"/>
+        <line num="82" type="method" name="platformTypes" visibility="public" complexity="2" crap="2" count="9"/>
+        <line num="84" type="stmt" count="9"/>
+        <line num="86" type="stmt" count="9"/>
+        <line num="94" type="method" name="threatEntryTypes" visibility="public" complexity="2" crap="2" count="9"/>
+        <line num="96" type="stmt" count="9"/>
+        <line num="98" type="stmt" count="9"/>
         <line num="106" type="method" name="curlTimeout" visibility="public" complexity="2" crap="2" count="1"/>
         <line num="108" type="stmt" count="1"/>
         <line num="110" type="stmt" count="1"/>
@@ -43,105 +43,122 @@
     <package name="RattfieldNz\SafeUrls\Libraries\Curl">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Libraries/Curl/Curl.php">
         <class name="RattfieldNz\SafeUrls\Libraries\Curl\Curl" namespace="RattfieldNz\SafeUrls\Libraries\Curl" category="PHP">
-          <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="23" coveredelements="23"/>
+          <metrics complexity="5" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="18" elements="24" coveredelements="21"/>
         </class>
-        <line num="37" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="39" type="stmt" count="1"/>
-        <line num="40" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="42" type="stmt" count="1"/>
-        <line num="43" type="stmt" count="1"/>
-        <line num="45" type="stmt" count="1"/>
-        <line num="46" type="stmt" count="1"/>
-        <line num="53" type="method" name="execute" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="55" type="stmt" count="1"/>
-        <line num="56" type="stmt" count="1"/>
-        <line num="57" type="stmt" count="1"/>
-        <line num="58" type="stmt" count="1"/>
-        <line num="59" type="stmt" count="1"/>
-        <line num="60" type="stmt" count="1"/>
-        <line num="69" type="method" name="getData" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="71" type="stmt" count="1"/>
-        <line num="73" type="stmt" count="1"/>
-        <line num="74" type="stmt" count="1"/>
-        <line num="77" type="stmt" count="1"/>
-        <line num="85" type="method" name="_setDefaultHeaders" visibility="private" complexity="1" crap="1" count="1"/>
-        <line num="87" type="stmt" count="1"/>
-        <line num="91" type="stmt" count="1"/>
-        <metrics loc="92" ncloc="56" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="23" coveredelements="23"/>
+        <line num="34" type="method" name="__construct" visibility="public" complexity="2" crap="2.06" count="6"/>
+        <line num="36" type="stmt" count="6"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="6"/>
+        <line num="43" type="stmt" count="6"/>
+        <line num="44" type="stmt" count="6"/>
+        <line num="45" type="stmt" count="6"/>
+        <line num="46" type="stmt" count="6"/>
+        <line num="53" type="method" name="execute" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="55" type="stmt" count="6"/>
+        <line num="56" type="stmt" count="6"/>
+        <line num="57" type="stmt" count="6"/>
+        <line num="58" type="stmt" count="6"/>
+        <line num="59" type="stmt" count="6"/>
+        <line num="61" type="stmt" count="6"/>
+        <line num="71" type="method" name="getData" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="73" type="stmt" count="6"/>
+        <line num="75" type="stmt" count="6"/>
+        <line num="76" type="stmt" count="6"/>
+        <line num="79" type="stmt" count="6"/>
+        <line num="87" type="method" name="_setDefaultHeaders" visibility="private" complexity="1" crap="1" count="6"/>
+        <line num="89" type="stmt" count="6"/>
+        <line num="93" type="stmt" count="6"/>
+        <metrics loc="94" ncloc="58" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="18" elements="24" coveredelements="21"/>
       </file>
     </package>
     <package name="RattfieldNz\SafeUrls\Libraries\Data">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Libraries/Data/Data.php">
         <class name="RattfieldNz\SafeUrls\Libraries\Data\Data" namespace="RattfieldNz\SafeUrls\Libraries\Data" category="PHP">
-          <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
+          <metrics complexity="7" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
         </class>
-        <line num="29" type="method" name="payload" visibility="public" complexity="4" crap="4" count="4"/>
-        <line num="33" type="stmt" count="4"/>
-        <line num="34" type="stmt" count="4"/>
-        <line num="37" type="stmt" count="4"/>
-        <line num="38" type="stmt" count="4"/>
-        <line num="39" type="stmt" count="4"/>
-        <line num="40" type="stmt" count="4"/>
-        <line num="52" type="method" name="formatUrls" visibility="public" complexity="2" crap="2" count="7"/>
-        <line num="54" type="stmt" count="7"/>
-        <line num="55" type="stmt" count="7"/>
-        <line num="56" type="stmt" count="5"/>
-        <line num="59" type="stmt" count="7"/>
-        <metrics loc="61" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
+        <line num="29" type="method" name="payload" visibility="public" complexity="4" crap="4" count="9"/>
+        <line num="33" type="stmt" count="9"/>
+        <line num="34" type="stmt" count="9"/>
+        <line num="37" type="stmt" count="9"/>
+        <line num="38" type="stmt" count="9"/>
+        <line num="39" type="stmt" count="9"/>
+        <line num="40" type="stmt" count="9"/>
+        <line num="52" type="method" name="formatUrls" visibility="public" complexity="2" crap="2" count="12"/>
+        <line num="54" type="stmt" count="12"/>
+        <line num="55" type="stmt" count="12"/>
+        <line num="56" type="stmt" count="10"/>
+        <line num="59" type="stmt" count="12"/>
+        <line num="67" type="method" name="googleApiUrl" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="70" type="stmt" count="6"/>
+        <metrics loc="72" ncloc="40" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
       </file>
     </package>
-    <package name="RattfieldNz\SafeUrls\Libraries">
-      <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Libraries/Defaults.php">
-        <class name="RattfieldNz\SafeUrls\Libraries\Defaults" namespace="RattfieldNz\SafeUrls\Libraries" category="PHP">
-          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    <package name="RattfieldNz\SafeUrls\Libraries\Traits">
+      <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Libraries/Traits/StaticCalling.php">
+        <class name="StaticCalling" namespace="RattfieldNz\SafeUrls\Libraries\Traits">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
-        <metrics loc="18" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="18" type="method" name="callStatic" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="20" type="stmt" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <metrics loc="25" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
     </package>
     <package name="RattfieldNz\SafeUrls">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\SafeUrls" namespace="RattfieldNz\SafeUrls" category="PHP">
-          <metrics complexity="9" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="3" elements="22" coveredelements="4"/>
+          <metrics complexity="15" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="32" coveredelements="27"/>
         </class>
-        <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="32" type="stmt" count="1"/>
-        <line num="35" type="stmt" count="1"/>
-        <line num="36" type="stmt" count="1"/>
-        <line num="45" type="method" name="check" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <line num="57" type="method" name="add" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="71" type="method" name="remove" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="73" type="stmt" count="0"/>
-        <line num="75" type="stmt" count="0"/>
-        <line num="86" type="method" name="isDangerous" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="88" type="stmt" count="0"/>
-        <line num="99" type="method" name="isSafe" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="101" type="stmt" count="0"/>
-        <line num="109" type="method" name="getDangerous" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="111" type="stmt" count="0"/>
-        <line num="119" type="method" name="getSafe" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="121" type="stmt" count="0"/>
-        <line num="132" type="method" name="format" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="134" type="stmt" count="0"/>
-        <metrics loc="136" ncloc="59" classes="1" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="3" elements="22" coveredelements="4"/>
+        <line num="35" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
+        <line num="38" type="stmt" count="9"/>
+        <line num="41" type="stmt" count="9"/>
+        <line num="42" type="stmt" count="9"/>
+        <line num="53" type="method" name="check" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="55" type="stmt" count="5"/>
+        <line num="57" type="stmt" count="5"/>
+        <line num="58" type="stmt" count="5"/>
+        <line num="69" type="method" name="checkCallStatic" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="74" type="method" name="execute" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="75" type="stmt" count="3"/>
+        <line num="76" type="stmt" count="3"/>
+        <line num="86" type="method" name="add" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="88" type="stmt" count="7"/>
+        <line num="90" type="stmt" count="7"/>
+        <line num="100" type="method" name="remove" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="102" type="stmt" count="2"/>
+        <line num="104" type="stmt" count="2"/>
+        <line num="114" type="method" name="getCurrentUrls" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="115" type="stmt" count="3"/>
+        <line num="118" type="method" name="getResults" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="119" type="stmt" count="2"/>
+        <line num="129" type="method" name="isDangerous" visibility="public" complexity="5" crap="8.12" count="1"/>
+        <line num="131" type="stmt" count="1"/>
+        <line num="132" type="stmt" count="1"/>
+        <line num="133" type="stmt" count="1"/>
+        <line num="134" type="stmt" count="1"/>
+        <line num="136" type="stmt" count="0"/>
+        <line num="137" type="stmt" count="0"/>
+        <line num="138" type="stmt" count="0"/>
+        <line num="141" type="stmt" count="0"/>
+        <metrics loc="143" ncloc="76" classes="1" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="32" coveredelements="27"/>
       </file>
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/SafeUrlsServiceProvider.php">
         <class name="RattfieldNz\SafeUrls\SafeUrlsServiceProvider" namespace="RattfieldNz\SafeUrls">
           <metrics complexity="10" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="13" elements="33" coveredelements="15"/>
         </class>
-        <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="14"/>
-        <line num="29" type="stmt" count="14"/>
-        <line num="30" type="stmt" count="14"/>
-        <line num="34" type="stmt" count="14"/>
-        <line num="35" type="stmt" count="14"/>
-        <line num="37" type="stmt" count="14"/>
-        <line num="44" type="method" name="register" visibility="public" complexity="1" crap="1.04" count="14"/>
+        <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="24"/>
+        <line num="29" type="stmt" count="24"/>
+        <line num="30" type="stmt" count="24"/>
+        <line num="34" type="stmt" count="24"/>
+        <line num="35" type="stmt" count="24"/>
+        <line num="37" type="stmt" count="24"/>
+        <line num="44" type="method" name="register" visibility="public" complexity="1" crap="1.04" count="24"/>
         <line num="48" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="14"/>
-        <line num="50" type="stmt" count="14"/>
+        <line num="49" type="stmt" count="24"/>
+        <line num="50" type="stmt" count="24"/>
         <line num="57" type="method" name="provides" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="59" type="stmt" count="0"/>
         <line num="67" type="method" name="bootForConsole" visibility="protected" complexity="1" crap="2.00" count="0"/>
@@ -150,24 +167,24 @@
         <line num="72" type="stmt" count="0"/>
         <line num="75" type="stmt" count="0"/>
         <line num="76" type="stmt" count="0"/>
-        <line num="85" type="method" name="mergeConfigFrom" visibility="protected" complexity="1" crap="1" count="14"/>
-        <line num="87" type="stmt" count="14"/>
-        <line num="88" type="stmt" count="14"/>
-        <line num="89" type="stmt" count="14"/>
-        <line num="97" type="method" name="mergeConfig" visibility="protected" complexity="5" crap="13.57" count="14"/>
-        <line num="99" type="stmt" count="14"/>
-        <line num="100" type="stmt" count="14"/>
-        <line num="101" type="stmt" count="0"/>
-        <line num="102" type="stmt" count="0"/>
+        <line num="86" type="method" name="mergeConfigFrom" visibility="protected" complexity="1" crap="1" count="24"/>
+        <line num="88" type="stmt" count="24"/>
+        <line num="89" type="stmt" count="24"/>
+        <line num="90" type="stmt" count="24"/>
+        <line num="100" type="method" name="mergeConfig" visibility="protected" complexity="5" crap="13.57" count="24"/>
+        <line num="102" type="stmt" count="24"/>
+        <line num="103" type="stmt" count="24"/>
         <line num="104" type="stmt" count="0"/>
         <line num="105" type="stmt" count="0"/>
         <line num="107" type="stmt" count="0"/>
         <line num="108" type="stmt" count="0"/>
         <line num="110" type="stmt" count="0"/>
-        <line num="112" type="stmt" count="14"/>
-        <metrics loc="114" ncloc="62" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="13" elements="33" coveredelements="15"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="113" type="stmt" count="0"/>
+        <line num="115" type="stmt" count="24"/>
+        <metrics loc="117" ncloc="63" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="13" elements="33" coveredelements="15"/>
       </file>
     </package>
-    <metrics files="7" loc="561" ncloc="291" classes="6" methods="29" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="84" coveredstatements="59" elements="113" coveredelements="75"/>
+    <metrics files="7" loc="591" ncloc="321" classes="7" methods="31" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="78" elements="130" coveredelements="102"/>
   </project>
 </coverage>
