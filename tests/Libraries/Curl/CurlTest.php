@@ -70,7 +70,6 @@ class CurlTest extends TestCase
 
     public function testPhpCurlExtensionLoaded()
     {
-
         $this->assertTrue(extension_loaded('curl'));
     }
 }

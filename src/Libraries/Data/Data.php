@@ -66,7 +66,7 @@ class Data
      */
     public static function googleApiUrl()
     {
-        return 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' .
+        return 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key='.
             Config::googleApiKey();
     }
 }

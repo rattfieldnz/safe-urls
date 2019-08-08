@@ -35,7 +35,8 @@ class StaticCallingTraitTest extends TestCase
         $className = SafeUrls::class;
         $methodName = 'check';
 
-        $testClass = new class { use StaticCalling;
+        $testClass = new class() {
+            use StaticCalling;
         };
 
         // Only testing with returned HTTP status, as Google Safebrowsing API not working as
@@ -45,7 +46,7 @@ class StaticCallingTraitTest extends TestCase
             $testClass->callStatic(
                 $className, $methodName, $this->urlsToTest
             ), true
-        )["status"];
+        )['status'];
 
         $this->assertEquals($expected, $actual);
     }

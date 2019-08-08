@@ -27,8 +27,9 @@ class Curl
      *
      * Set the needed properties to do a CURL request.
      *
-     * @param  array $payload Data to be submitted with CURL request.
-     * @param  int   $timeout Timeout in seconds to complete a CURL request. Default is 10.
+     * @param array $payload Data to be submitted with CURL request.
+     * @param int   $timeout Timeout in seconds to complete a CURL request. Default is 10.
+     *
      * @throws \ErrorException Will throw an exception if PHP ext-curl is not installed.
      */
     public function __construct(array $payload, int $timeout = 10)
