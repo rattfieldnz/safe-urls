@@ -2,8 +2,8 @@
 
 namespace RattfieldNz\SafeUrls;
 
-use RattfieldNz\SafeUrls\Libraries\Data\Data;
 use RattfieldNz\SafeUrls\Libraries\Curl\Curl;
+use RattfieldNz\SafeUrls\Libraries\Data\Data;
 use RattfieldNz\SafeUrls\Libraries\Traits\StaticCalling;
 
 /**
@@ -44,19 +44,20 @@ class SafeUrls
     /**
      * Checks a given set of URLs with Google's Safe Browsing API.
      *
-     * @param array $urls An array of URLs to check.
-     * @param bool $resultsAsArray Determines whether results will be returned as array or JSON.
+     * @param array $urls           An array of URLs to check.
+     * @param bool  $resultsAsArray Determines whether results will be returned as array or JSON.
+     *
+     * @throws \ErrorException
      *
      * @return string|array The set of results, in JSON.
-     * @throws \ErrorException
      */
     public static function check(array $urls, bool $resultsAsArray = false)
     {
         $payload = Data::payload($urls);
 
         $data = (new Curl($payload))->getData();
-        return $resultsAsArray == false ? $data : json_decode($data, true);
 
+        return $resultsAsArray == false ? $data : json_decode($data, true);
     }
 
     /**
@@ -66,13 +67,15 @@ class SafeUrls
      *
      * @return array|string The set of results, in JSON.
      */
-    public function checkCallStatic(array $urls){
-
-        return $this->callStatic(SafeUrls::class, "check", $urls);
+    public function checkCallStatic(array $urls)
+    {
+        return $this->callStatic(self::class, 'check', $urls);
     }
 
-    public function execute(){
-        $this->results = SafeUrls::check($this->urls);
+    public function execute()
+    {
+        $this->results = self::check($this->urls);
+
         return $this;
     }
 
@@ -111,13 +114,16 @@ class SafeUrls
      *
      * @return array|string
      */
-    public function getCurrentUrls(bool $asArray = false){
-        return $asArray == false ? json_encode($this->urls): $this->urls;
+    public function getCurrentUrls(bool $asArray = false)
+    {
+        return $asArray == false ? json_encode($this->urls) : $this->urls;
     }
 
-    public function getResults(){
+    public function getResults()
+    {
         return $this->results;
     }
+
     /**
      * Check to see if the URL has been marked as unsafe.
      *
@@ -128,9 +134,9 @@ class SafeUrls
      */
     public function isDangerous(string $url): bool
     {
-        $data = json_decode((string)$this->results);
-        $matches = empty($data->response["matches"]) ? null : $data->response["matches"];
-        if(empty($matches)){
+        $data = json_decode((string) $this->results);
+        $matches = empty($data->response['matches']) ? null : $data->response['matches'];
+        if (empty($matches)) {
             return false;
         }
         foreach ($matches as $result) {
@@ -138,6 +144,7 @@ class SafeUrls
                 return true;
             }
         }
+
         return false;
     }
 }
