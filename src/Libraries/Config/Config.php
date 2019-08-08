@@ -29,13 +29,13 @@ class Config
     /**
      * Retrieve the Google API key.
      *
-     * @return string The Google API key.
+     * @return mixed|string|null The Google API key.
      */
-    public static function googleApiKey(): string
+    public static function googleApiKey()
     {
         $key = config('safe-urls.google.api_key');
 
-        return !empty($key) ? $key : '';
+        return !empty($key) ? $key : env('GOOGLE_API_KEY');
     }
 
     /**

@@ -21,6 +21,7 @@ class ConfigTest extends TestCase
     {
         $expected = env('GOOGLE_API_KEY');
         $actual = Config::googleApiKey();
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -31,6 +32,7 @@ class ConfigTest extends TestCase
     {
         $expected = env('GOOGLE_CLIENT_ID');
         $actual = Config::clientId();
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -41,6 +43,7 @@ class ConfigTest extends TestCase
     {
         $expected = env('GOOGLE_CLIENT_VERSION');
         $actual = Config::clientVersion();
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -58,6 +61,7 @@ class ConfigTest extends TestCase
         ];
 
         $actual = Config::threatTypes();
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -79,6 +83,7 @@ class ConfigTest extends TestCase
         ];
 
         $actual = Config::platformTypes();
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -93,6 +98,7 @@ class ConfigTest extends TestCase
         ];
 
         $actual = Config::threatEntryTypes();
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -103,6 +109,7 @@ class ConfigTest extends TestCase
     {
         $expected = env('GOOGLE_CURL_TIMEOUT');
         $actual = Config::curlTimeout();
+
         $this->assertEquals($expected, $actual);
     }
 }

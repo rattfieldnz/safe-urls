@@ -2,6 +2,9 @@
 
 namespace RattfieldNz\SafeUrls\Libraries\Curl;
 
+use Curl\Curl as PhpCurl;
+use RattfieldNz\SafeUrls\Libraries\Config\Config;
+
 /**
  * Class Curl.
  *
@@ -14,16 +17,11 @@ namespace RattfieldNz\SafeUrls\Libraries\Curl;
  */
 class Curl
 {
-    private $_ch;
     private $_postUrl;
-    private $_headers;
     private $_payload;
     private $_defaultHeaders;
     private $_timeout;
-
-    private $_data;
-    private $_decodedData;
-    private $_responseCode;
+    private $_curl;
 
     /**
      * Curl constructor.
@@ -31,22 +29,50 @@ class Curl
      * Set the needed properties to do a CURL request.
      *
      * @param string $postUrl URL to use for request.
-     * @param array  $headers Headers to use for request. @see setDefaultHeaders().
      * @param array  $payload Data to be submitted with CURL request.
      * @param int    $timeout Timeout in seconds to complete a CURL request. Default is 10.
+     *
+     * @throws \ErrorException
      */
-    public function __construct(string $postUrl, array $headers, array $payload, int $timeout = 10)
+    public function __construct(string $postUrl, array $payload, int $timeout = 10)
     {
-        $this->_ch = curl_init();
+        $this->_curl = new PhpCurl();
         $this->_postUrl = $postUrl;
-        $this->_headers = $headers;
         $this->_payload = $payload;
         $this->_timeout = $timeout;
         self::_setDefaultHeaders();
+    }
 
-        $this->_data = null;
-        $this->_decodedData = null;
-        $this->_responseCode = null;
+    /**
+     * Execute a CURL request, and return current object for further processing.
+     *
+     * @return PhpCurl
+     */
+    public function execute(): PhpCurl
+    {
+        $this->_curl->setOpt(CURLOPT_RETURNTRANSFER, true);
+        $this->_curl->setOpt(CURLOPT_CONNECTTIMEOUT, $this->_timeout);
+        $this->_curl->setOpt(CURLOPT_HTTPHEADER, $this->_defaultHeaders);
+        $this->_curl->setOpt(CURLOPT_POSTFIELDS, json_encode($this->_payload));
+        $this->_curl->post($this->_postUrl);
+        return $this->_curl;
+    }
+
+    /**
+     * Get the data retrieved from executing CURL request.
+     *
+     * @return array|string
+     * @see    \RattfieldNz\SafeUrls\Libraries\Curl\Curl->execute().
+     */
+    public function getData()
+    {
+        $dataObject = $this->execute();
+        $data = [
+            'status' => $dataObject->getHttpStatus(),
+            'response' => json_decode($dataObject->response, true)
+        ];
+
+        return json_encode($data);
     }
 
     /**
@@ -60,48 +86,5 @@ class Curl
             'Content-Type: application/json',
             'Connection: Keep-Alive',
         ];
-    }
-
-    /**
-     * Execute a CURL request, and return current object for further processing.
-     *
-     * @return $this
-     */
-    public function execute()
-    {
-        return $this;
-    }
-
-    /**
-     * Get the data retrieved from executing CURL request.
-     *
-     * @see \RattfieldNz\SafeUrls\Libraries\Curl\Curl->execute().
-     *
-     * @return array Retrieved data from CURL request.
-     */
-    public function getData()
-    {
-        return [];
-    }
-
-    /**
-     * Decodes a string of JSON decoded data.
-     *
-     * @param string $jsonData The JSON date to be decoded.
-     *
-     * @return mixed|null Decoded JSON data.
-     */
-    private function _decode(string $jsonData)
-    {
-        return !empty($jsonData) ? json_decode($jsonData, true) : null;
-    }
-
-    /**
-     * Sets options of current object's CURL session handle.
-     *
-     * @return void
-     */
-    private function _set(): void
-    {
     }
 }

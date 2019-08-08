@@ -11,4 +11,6 @@ if [ -z "${GOOGLE_API_KEY}" ]; then
   export GOOGLE_API_KEY=${1}
 fi
 
+echo -e "Your Google Safebrowsing API key is: ${GOOGLE_API_KEY}.\n"
+
 vendor/bin/phpunit --coverage-clover coverage.xml

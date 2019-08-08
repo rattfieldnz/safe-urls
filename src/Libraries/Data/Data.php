@@ -19,11 +19,14 @@ class Data
     /**
      * Generate payload for Google Safe Browsing API.
      *
-     * @param array $urls List of URLS to add to payload for checking.
+     * @param array $urls             List of URLS to add to payload for checking.
+     * @param array $threatTypes      List of Google Threat Types.
+     * @param array $platformTypes    List of Google Platform Types.
+     * @param array $threatEntryTypes List of Google Threat Platform Types.
      *
      * @return array The generated payload.
      */
-    public static function payload(array $urls): array
+    public static function payload(array $urls, array $threatTypes = [], array $platformTypes = [], array $threatEntryTypes = []): array
     {
         return [
             'client' => [
@@ -31,9 +34,9 @@ class Data
                 'clientVersion' => Config::clientVersion(),
             ],
             'threatInfo' => [
-                'threatTypes'      => Config::threatTypes(),
-                'platformTypes'    => Config::platformTypes(),
-                'threatEntryTypes' => Config::threatEntryTypes(),
+                'threatTypes'      => !empty($threatTypes) ? $threatTypes : Config::threatTypes(),
+                'platformTypes'    => !empty($platformTypes) ? $platformTypes : Config::platformTypes(),
+                'threatEntryTypes' => !empty($threatEntryTypes) ? $threatEntryTypes : Config::threatEntryTypes(),
                 'threatEntries'    => self::formatUrls($urls),
             ],
         ];

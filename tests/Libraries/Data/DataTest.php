@@ -9,7 +9,7 @@ use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class DataTest extends TestCase
 {
-    private $formattedUrls = [
+    private $_formattedUrls = [
         ['url' => 'https://www.google.com'],
         ['url' => 'https://github.com'],
         ['url' => 'https://github.styleci.io'],
@@ -17,7 +17,7 @@ class DataTest extends TestCase
         ['url' => 'https://packagist.org'],
     ];
 
-    private $urls = [
+    private $_urls = [
         'https://www.google.com',
         'https://github.com',
         'https://github.styleci.io',
@@ -32,23 +32,19 @@ class DataTest extends TestCase
 
     public function testPayloadMultipleUrls()
     {
-        $expected = self::payload($this->formattedUrls);
+        $expected = self::_payload($this->_urls);
 
-        $actual = Data::payload($this->urls);
+        $actual = Data::payload($this->_urls);
         $this->assertEquals($expected, $actual);
     }
 
     public function testPayloadSingleUrl()
     {
-        $formattedUrl = [
-            ['url' => 'https://www.google.com'],
-        ];
-
         $url = [
             'https://www.google.com',
         ];
 
-        $expected = self::payload($formattedUrl);
+        $expected = self::_payload($url);
 
         $actual = Data::payload($url);
         $this->assertEquals($expected, $actual);
@@ -56,13 +52,9 @@ class DataTest extends TestCase
 
     public function testPayloadNoUrls()
     {
-        $formattedUrls = [
-            //['url' => ''],
-        ];
-
         $urls = [];
 
-        $expected = self::payload($formattedUrls);
+        $expected = self::_payload($urls);
 
         $actual = Data::payload($urls);
         $this->assertEquals($expected, $actual);
@@ -70,9 +62,9 @@ class DataTest extends TestCase
 
     public function testFormatUrlsMultiple()
     {
-        $expected = $this->formattedUrls;
+        $expected = $this->_formattedUrls;
 
-        $actual = Data::formatUrls($this->urls);
+        $actual = Data::formatUrls($this->_urls);
         $this->assertEquals($expected, $actual);
     }
 
@@ -98,7 +90,7 @@ class DataTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    private static function payload(array $urls): array
+    private static function _payload(array $urls, array $threatTypes = [], array $platformTypes = [], array $threatEntryTypes = []): array
     {
         return [
             'client' => [
@@ -106,10 +98,10 @@ class DataTest extends TestCase
                 'clientVersion' => Config::clientVersion(),
             ],
             'threatInfo' => [
-                'threatTypes'      => Config::threatTypes(),
-                'platformTypes'    => Config::platformTypes(),
-                'threatEntryTypes' => Config::threatEntryTypes(),
-                'threatEntries'    => $urls,
+                'threatTypes'      => !empty($threatTypes) ? $threatTypes : Config::threatTypes(),
+                'platformTypes'    => !empty($platformTypes) ? $platformTypes : Config::platformTypes(),
+                'threatEntryTypes' => !empty($threatEntryTypes) ? $threatEntryTypes : Config::threatEntryTypes(),
+                'threatEntries'    => Data::formatUrls($urls),
             ],
         ];
     }
