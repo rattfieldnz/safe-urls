@@ -35,10 +35,10 @@ class SafeUrls
     public function __construct()
     {
         // Initialise the list of urls as an empty array.
-        $this->urls = [];
+        $this->urls = [ ];
 
         // Initialise the list of urls as an empty array.
-        $this->results = [];
+        $this->results = [ ];
     }
 
     /**
