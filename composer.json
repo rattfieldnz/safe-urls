@@ -52,10 +52,7 @@
         }
     },
     "scripts": {
-        "post-root-package-install": [
-            "chmod u+rwx run_phpunit"
-        ],
-        "post-create-project-cmd": [
+        "pre-install-cmd": [
             "chmod u+rwx run_phpunit"
         ]
     }
