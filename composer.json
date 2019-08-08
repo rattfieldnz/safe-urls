@@ -50,5 +50,13 @@
                 "SafeUrls": "RattfieldNz\\SafeUrls\\Facades\\SafeUrls"
             }
         }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "chmod u+rwx run_phpunit"
+        ],
+        "post-create-project-cmd": [
+            "chmod u+rwx run_phpunit"
+        ]
     }
 }
