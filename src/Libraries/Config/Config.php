@@ -18,13 +18,13 @@ class Config
     public const DEFAULT_TIMEOUT = 10;
 
     // Default threat types.
-    public const DEFAULT_THREAT_TYPES = [ 'THREAT_TYPE_UNSPECIFIED' ];
+    public const DEFAULT_THREAT_TYPES = ['THREAT_TYPE_UNSPECIFIED'];
 
     // Default threst entry types.
-    public const DEFAULT_THREAT_ENTRY_TYPES = [ 'THREAT_ENTRY_TYPE_UNSPECIFIED' ];
+    public const DEFAULT_THREAT_ENTRY_TYPES = ['THREAT_ENTRY_TYPE_UNSPECIFIED'];
 
     // Default threat platform types.
-    public const DEFAULT_THREAT_PLATFORM_TYPES = [ 'PLATFORM_TYPE_UNSPECIFIED' ];
+    public const DEFAULT_THREAT_PLATFORM_TYPES = ['PLATFORM_TYPE_UNSPECIFIED'];
 
     /**
      * Retrieve the Google API key.
