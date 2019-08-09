@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565338629">
-  <project timestamp="1565338629">
+<coverage generated="1565347669">
+  <project timestamp="1565347669">
     <package name="RattfieldNz\SafeUrls\Facades">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Facades/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\Facades\SafeUrls" namespace="RattfieldNz\SafeUrls\Facades" category="PHP">
@@ -109,12 +109,12 @@
     <package name="RattfieldNz\SafeUrls">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\SafeUrls" namespace="RattfieldNz\SafeUrls" category="PHP">
-          <metrics complexity="16" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="19" elements="33" coveredelements="27"/>
+          <metrics complexity="17" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="34" coveredelements="34"/>
         </class>
-        <line num="35" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
-        <line num="38" type="stmt" count="9"/>
-        <line num="41" type="stmt" count="9"/>
-        <line num="42" type="stmt" count="9"/>
+        <line num="35" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+        <line num="38" type="stmt" count="11"/>
+        <line num="41" type="stmt" count="11"/>
+        <line num="42" type="stmt" count="11"/>
         <line num="54" type="method" name="check" visibility="public" complexity="2" crap="2" count="5"/>
         <line num="56" type="stmt" count="5"/>
         <line num="58" type="stmt" count="5"/>
@@ -134,32 +134,33 @@
         <line num="119" type="stmt" count="3"/>
         <line num="122" type="method" name="getResults" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="124" type="stmt" count="2"/>
-        <line num="135" type="method" name="isDangerous" visibility="public" complexity="6" crap="12.17" count="1"/>
-        <line num="143" type="stmt" count="1"/>
-        <line num="144" type="stmt" count="1"/>
-        <line num="146" type="stmt" count="1"/>
-        <line num="147" type="stmt" count="1"/>
-        <line num="150" type="stmt" count="0"/>
-        <line num="151" type="stmt" count="0"/>
-        <line num="152" type="stmt" count="0"/>
-        <line num="153" type="stmt" count="0"/>
-        <line num="158" type="stmt" count="0"/>
-        <metrics loc="160" ncloc="82" classes="1" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="19" elements="33" coveredelements="27"/>
+        <line num="137" type="method" name="isDangerous" visibility="public" complexity="7" crap="7" count="3"/>
+        <line num="145" type="stmt" count="3"/>
+        <line num="147" type="stmt" count="3"/>
+        <line num="148" type="stmt" count="3"/>
+        <line num="150" type="stmt" count="3"/>
+        <line num="151" type="stmt" count="1"/>
+        <line num="154" type="stmt" count="2"/>
+        <line num="155" type="stmt" count="2"/>
+        <line num="156" type="stmt" count="2"/>
+        <line num="157" type="stmt" count="1"/>
+        <line num="162" type="stmt" count="2"/>
+        <metrics loc="164" ncloc="84" classes="1" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="34" coveredelements="34"/>
       </file>
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/SafeUrlsServiceProvider.php">
         <class name="RattfieldNz\SafeUrls\SafeUrlsServiceProvider" namespace="RattfieldNz\SafeUrls">
           <metrics complexity="10" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="13" elements="33" coveredelements="15"/>
         </class>
-        <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="24"/>
-        <line num="29" type="stmt" count="24"/>
-        <line num="30" type="stmt" count="24"/>
-        <line num="34" type="stmt" count="24"/>
-        <line num="35" type="stmt" count="24"/>
-        <line num="37" type="stmt" count="24"/>
-        <line num="44" type="method" name="register" visibility="public" complexity="1" crap="1.04" count="24"/>
+        <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="26"/>
+        <line num="29" type="stmt" count="26"/>
+        <line num="30" type="stmt" count="26"/>
+        <line num="34" type="stmt" count="26"/>
+        <line num="35" type="stmt" count="26"/>
+        <line num="37" type="stmt" count="26"/>
+        <line num="44" type="method" name="register" visibility="public" complexity="1" crap="1.04" count="26"/>
         <line num="48" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="24"/>
-        <line num="50" type="stmt" count="24"/>
+        <line num="49" type="stmt" count="26"/>
+        <line num="50" type="stmt" count="26"/>
         <line num="57" type="method" name="provides" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="59" type="stmt" count="0"/>
         <line num="67" type="method" name="bootForConsole" visibility="protected" complexity="1" crap="2.00" count="0"/>
@@ -168,13 +169,13 @@
         <line num="72" type="stmt" count="0"/>
         <line num="75" type="stmt" count="0"/>
         <line num="76" type="stmt" count="0"/>
-        <line num="86" type="method" name="mergeConfigFrom" visibility="protected" complexity="1" crap="1" count="24"/>
-        <line num="88" type="stmt" count="24"/>
-        <line num="89" type="stmt" count="24"/>
-        <line num="90" type="stmt" count="24"/>
-        <line num="100" type="method" name="mergeConfig" visibility="protected" complexity="5" crap="13.57" count="24"/>
-        <line num="102" type="stmt" count="24"/>
-        <line num="103" type="stmt" count="24"/>
+        <line num="86" type="method" name="mergeConfigFrom" visibility="protected" complexity="1" crap="1" count="26"/>
+        <line num="88" type="stmt" count="26"/>
+        <line num="89" type="stmt" count="26"/>
+        <line num="90" type="stmt" count="26"/>
+        <line num="100" type="method" name="mergeConfig" visibility="protected" complexity="5" crap="13.57" count="26"/>
+        <line num="102" type="stmt" count="26"/>
+        <line num="103" type="stmt" count="26"/>
         <line num="104" type="stmt" count="0"/>
         <line num="105" type="stmt" count="0"/>
         <line num="107" type="stmt" count="0"/>
@@ -182,10 +183,10 @@
         <line num="110" type="stmt" count="0"/>
         <line num="111" type="stmt" count="0"/>
         <line num="113" type="stmt" count="0"/>
-        <line num="116" type="stmt" count="24"/>
+        <line num="116" type="stmt" count="26"/>
         <metrics loc="118" ncloc="64" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="13" elements="33" coveredelements="15"/>
       </file>
     </package>
-    <metrics files="7" loc="612" ncloc="328" classes="7" methods="31" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="100" coveredstatements="78" elements="131" coveredelements="102"/>
+    <metrics files="7" loc="616" ncloc="330" classes="7" methods="31" coveredmethods="25" conditionals="0" coveredconditionals="0" statements="101" coveredstatements="84" elements="132" coveredelements="109"/>
   </project>
 </coverage>

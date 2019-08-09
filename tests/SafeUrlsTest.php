@@ -8,7 +8,9 @@ use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class SafeUrlsTest extends TestCase
 {
-    /** @var SafeUrls */
+    /**
+     * @var SafeUrls
+     */
     private $safeUrls;
 
     private $urlsToTest;
@@ -126,8 +128,53 @@ class SafeUrlsTest extends TestCase
 
         // See tests\Libraries\Curl\CurlTest testMalwareSocialEngineeringAnyPlatformUrl().
         $expected = true;
+        //$actual = $this->safeUrls->isDangerous($dangerousUrl);
         $actual = !$this->safeUrls->isDangerous($dangerousUrl);
 
         $this->assertEquals($expected, $actual);
+    }
+
+    public function testIsDangerousWithPassedInResultsReturnsTrue()
+    {
+        $passedInResults = '{ "status": 200, "response": { "matches": [ { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/phishing.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/malware.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/SOCIAL_ENGINEERING/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" } ] } }';
+
+        $dangerousUrl = 'http://malware.testing.google.test/testing/malware/';
+
+        $expected = true;
+        $actual = $this->safeUrls->isDangerous($dangerousUrl, $passedInResults);
+
+        $this->assertEquals($expected, $actual);
+
+        // Test with known friendly URL not being in results.
+        $friendlyUrl = 'https://www.google.com';
+
+        $expected = false;
+        $actual = $this->safeUrls->isDangerous($friendlyUrl, $passedInResults);
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testIsDangerousWithPassedInResultsReturnsFalse(){
+
+        // Testing with 200 status but empty response.
+        $passedInResults = '{ "status": 200, "response": { }}';
+
+        $friendlyUrl = 'https://www.google.com';
+
+        $expected = false;
+        $actual = $this->safeUrls->isDangerous($friendlyUrl, $passedInResults);
+
+        $this->assertEquals($expected, $actual);
+
+        // Testing with 200 status and non-empty response.
+        $passedInResults = '{ "status": 200, "response": { "matches": [ { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/phishing.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/malware.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/SOCIAL_ENGINEERING/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" } ] } }';
+
+        $friendlyUrl = 'https://www.google.com';
+
+        $expected = false;
+        $actual = $this->safeUrls->isDangerous($friendlyUrl, $passedInResults);
+
+        $this->assertEquals($expected, $actual);
+
     }
 }

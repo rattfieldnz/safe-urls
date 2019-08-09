@@ -37,8 +37,8 @@ class SafeUrls
         // Initialise the list of urls as an empty array.
         $this->urls = [];
 
-        // Initialise the list of urls as an empty array.
-        $this->results = [];
+        // Initialise the list of urls as an empty JSON string.
+        $this->results = "";
     }
 
     /**
@@ -128,19 +128,23 @@ class SafeUrls
      * Check to see if the URL has been marked as unsafe.
      *
      * @param string $url The URL to check.
+     * @param string $resultSet An existing set of JSON results
+     *               to pass in as a parameter.
      *
      * @return bool True if the URL is unsafe, and false if
      *              it is safe,
      */
-    public function isDangerous(string $url): bool
+    public function isDangerous(string $url, string $resultSet = ""): bool
     {
         // Since Google API seems to not be working (even showing unsafe sites as 'safe'),
         // Below is a set of results retrieved via Postman.
         // See tests\Libraries\Curl\CurlTest testMalwareSocialEngineeringAnyPlatformUrl().
         //$this->results = '{ "status": 200, "response": { "matches": [ { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/phishing.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/malware.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/SOCIAL_ENGINEERING/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" } ] } }';
-        //$data = json_decode((string)$this->results);
+        //$data = json_decode($this->results);
 
-        $data = json_decode((string) $this->results);
+        $data = !empty($resultSet) ? $resultSet : $this->results;
+
+        $data = json_decode($data);
         $response = empty($data->response) ? null : $data->response;
 
         if (empty($response)) {
