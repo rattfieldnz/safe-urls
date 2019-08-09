@@ -19,7 +19,7 @@ build:
             command: phpcs-run
             use_website_config: true
         before:
-          - 'apt-get install php-dev -y; pecl channel-update pecl.php.net; pecl install xdebug; chmod u+x run_phpunit'
+          - 'chmod u+x run_phpunit'
           - command: './run_phpunit'
             idle_timeout: 600
             background: false

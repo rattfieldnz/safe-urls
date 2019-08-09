@@ -13,7 +13,37 @@ fi
 
 echo -e "Your Google Safebrowsing API key is: ${GOOGLE_API_KEY}.\n"
 
-vendor/bin/phpunit --coverage-clover coverage.xml
-wget https://scrutinizer-ci.com/ocular.phar
-php ocular.phar code-coverage:upload --format=php-clover coverage.xml
+sleep 2;
+
+echo -e "Now checking if XDebug is installed...\n";
+php -v | grep -q 'Xdebug';
+
+if [[ $? != 0 ]]; then
+
+  sleep 2;
+
+  echo -e "XDebug is not installed. Installing now...\n"
+
+  echo -e "Installing php-dev...\n";
+  sudo apt-get install php-dev -y > /dev/null 2>&1;
+
+  echo -e "Updating PECL channel...\n";
+  sudo pecl channel-update pecl.php.net > /dev/null 2>&1;
+
+  echo -e "Installing XDebug...\n";
+  sudo pecl pecl install xdebug > /dev/null 2>&1;
+
+  echo -e "Finished installing XDebug.\n"
+fi
+
+sleep 2;
+
+echo -e "XDebug is installed. Now running PHPUnit tests and generating code coverage report...\n"
+
+vendor/bin/phpunit --coverage-clover coverage.xml;
+
+wget https://scrutinizer-ci.com/ocular.phar > /dev/null 2>&1;
+php ocular.phar code-coverage:upload --format=php-clover coverage.xml > /dev/null 2>&1;
 rm ocular.phar
+
+echo -e "\nPHPUnit testing and code coverage reports now completed!"
