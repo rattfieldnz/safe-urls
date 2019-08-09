@@ -26,7 +26,7 @@ class Data
      *
      * @return array The generated payload.
      */
-    public static function payload(array $urls, array $threatTypes = [ ], array $platformTypes = [ ], array $threatEntryTypes = [ ]): array
+    public static function payload(array $urls, array $threatTypes = [], array $platformTypes = [], array $threatEntryTypes = []): array
     {
         return [
             'client' => [
@@ -51,9 +51,9 @@ class Data
      */
     public static function formatUrls(array $urls): array
     {
-        $formattedUrls = [ ];
+        $formattedUrls = [];
         foreach ($urls as $url) {
-            $formattedUrls[ ] = [ 'url' => $url ];
+            $formattedUrls[] = ['url' => $url];
         }
 
         return $formattedUrls;
