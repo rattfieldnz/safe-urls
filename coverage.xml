@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565309214">
-  <project timestamp="1565309214">
+<coverage generated="1565317823">
+  <project timestamp="1565317823">
     <package name="RattfieldNz\SafeUrls\Facades">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Facades/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\Facades\SafeUrls" namespace="RattfieldNz\SafeUrls\Facades" category="PHP">
@@ -135,15 +135,15 @@
         <line num="122" type="method" name="getResults" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="124" type="stmt" count="2"/>
         <line num="135" type="method" name="isDangerous" visibility="public" complexity="5" crap="8.12" count="1"/>
-        <line num="137" type="stmt" count="1"/>
-        <line num="138" type="stmt" count="1"/>
-        <line num="139" type="stmt" count="1"/>
-        <line num="140" type="stmt" count="1"/>
-        <line num="142" type="stmt" count="0"/>
-        <line num="143" type="stmt" count="0"/>
-        <line num="144" type="stmt" count="0"/>
+        <line num="143" type="stmt" count="1"/>
+        <line num="144" type="stmt" count="1"/>
+        <line num="145" type="stmt" count="1"/>
+        <line num="146" type="stmt" count="1"/>
         <line num="148" type="stmt" count="0"/>
-        <metrics loc="150" ncloc="82" classes="1" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="32" coveredelements="27"/>
+        <line num="149" type="stmt" count="0"/>
+        <line num="150" type="stmt" count="0"/>
+        <line num="154" type="stmt" count="0"/>
+        <metrics loc="156" ncloc="78" classes="1" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="32" coveredelements="27"/>
       </file>
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/SafeUrlsServiceProvider.php">
         <class name="RattfieldNz\SafeUrls\SafeUrlsServiceProvider" namespace="RattfieldNz\SafeUrls">
@@ -185,6 +185,6 @@
         <metrics loc="118" ncloc="64" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="13" elements="33" coveredelements="15"/>
       </file>
     </package>
-    <metrics files="7" loc="602" ncloc="328" classes="7" methods="31" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="78" elements="130" coveredelements="102"/>
+    <metrics files="7" loc="608" ncloc="324" classes="7" methods="31" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="78" elements="130" coveredelements="102"/>
   </project>
 </coverage>

@@ -14,7 +14,6 @@ fi
 echo -e "Your Google Safebrowsing API key is: ${GOOGLE_API_KEY}.\n"
 
 vendor/bin/phpunit --coverage-clover coverage.xml
-rm ocular.phar
 wget https://scrutinizer-ci.com/ocular.phar
 php ocular.phar code-coverage:upload --format=php-clover coverage.xml
 rm ocular.phar
