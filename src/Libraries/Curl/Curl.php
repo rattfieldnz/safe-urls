@@ -43,7 +43,7 @@ class Curl
         $this->_curl = new PhpCurl();
         $this->_payload = $payload;
         $this->_timeout = $timeout;
-        self::_setDefaultHeaders();
+        $this->_setDefaultHeaders();
     }
 
     /**

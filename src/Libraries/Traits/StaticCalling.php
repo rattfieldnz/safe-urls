@@ -15,7 +15,7 @@ trait StaticCalling
      *
      * @return mixed
      *
-     * @see    https://www.pagemachine.de/blog/mocking-static-method-calls/.
+     * @see https://www.pagemachine.de/blog/mocking-static-method-calls/.
      */
     public function callStatic($className, $methodName)
     {
