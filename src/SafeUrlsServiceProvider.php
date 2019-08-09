@@ -44,7 +44,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
     public function register()
     {
         // Register the service the package provides.
-        $this->app->singleton('safe-urls', function() {
+        $this->app->singleton('safe-urls', function () {
             return new SafeUrls();
         });
     }
@@ -56,7 +56,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [ 'safe-urls' ];
+        return ['safe-urls'];
     }
 
     /**
@@ -72,7 +72,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
         ], 'safe-urls');
 
         // Registering package commands.
-        $this->commands([ 'safe-urls' ]);
+        $this->commands(['safe-urls']);
     }
 
     /**
@@ -85,8 +85,8 @@ class SafeUrlsServiceProvider extends ServiceProvider
      */
     protected function mergeConfigFrom($path, $key)
     {
-        $config = $this->app[ 'config' ]->get($key, [ ]);
-        $this->app[ 'config' ]->set($key, $this->mergeConfig($config, require $path));
+        $config = $this->app['config']->get($key, []);
+        $this->app['config']->set($key, $this->mergeConfig($config, require $path));
     }
 
     /**
@@ -110,7 +110,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
             if (is_numeric($key)) {
                 continue;
             }
-            $array[ $key ] = $this->mergeConfig($value, $merging[ $key ]);
+            $array[$key] = $this->mergeConfig($value, $merging[$key]);
         }
 
         return $array;
