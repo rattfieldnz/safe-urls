@@ -35,10 +35,10 @@ class SafeUrls
     public function __construct()
     {
         // Initialise the list of urls as an empty array.
-        $this->urls = [];
+        $this->urls = [ ];
 
         // Initialise the list of urls as an empty array.
-        $this->results = [];
+        $this->results = [ ];
     }
 
     /**
@@ -135,7 +135,7 @@ class SafeUrls
     public function isDangerous(string $url): bool
     {
         $data = json_decode((string) $this->results);
-        $matches = empty($data->response) ? null : $data->response['matches'];
+        $matches = empty($data->response) ? null : $data->response[ 'matches' ];
         if (empty($matches)) {
             return false;
         }

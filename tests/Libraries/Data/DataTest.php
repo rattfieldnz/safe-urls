@@ -10,11 +10,11 @@ use RattfieldNz\SafeUrls\Tests\TestCase;
 class DataTest extends TestCase
 {
     private $_formattedUrls = [
-        ['url' => 'https://www.google.com'],
-        ['url' => 'https://github.com'],
-        ['url' => 'https://github.styleci.io'],
-        ['url' => 'https://travis-ci.org'],
-        ['url' => 'https://packagist.org'],
+        [ 'url' => 'https://www.google.com' ],
+        [ 'url' => 'https://github.com' ],
+        [ 'url' => 'https://github.styleci.io' ],
+        [ 'url' => 'https://travis-ci.org' ],
+        [ 'url' => 'https://packagist.org' ],
     ];
 
     private $_urls = [
@@ -52,7 +52,7 @@ class DataTest extends TestCase
 
     public function testPayloadNoUrls()
     {
-        $urls = [];
+        $urls = [ ];
 
         $expected = self::_payload($urls);
 
@@ -70,10 +70,10 @@ class DataTest extends TestCase
 
     public function testFormatUrlsSingle()
     {
-        $url = ['https://www.google.com'];
+        $url = [ 'https://www.google.com' ];
 
         $expected = [
-            ['url' => 'https://www.google.com'],
+            [ 'url' => 'https://www.google.com' ],
         ];
 
         $actual = Data::formatUrls($url);
@@ -82,15 +82,15 @@ class DataTest extends TestCase
 
     public function testFormatUrlsNone()
     {
-        $urls = [];
+        $urls = [ ];
 
-        $expected = [];
+        $expected = [ ];
 
         $actual = Data::formatUrls($urls);
         $this->assertEquals($expected, $actual);
     }
 
-    private static function _payload(array $urls, array $threatTypes = [], array $platformTypes = [], array $threatEntryTypes = []): array
+    private static function _payload(array $urls, array $threatTypes = [ ], array $platformTypes = [ ], array $threatEntryTypes = [ ]): array
     {
         return [
             'client' => [

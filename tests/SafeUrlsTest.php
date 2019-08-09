@@ -43,12 +43,12 @@ class SafeUrlsTest extends TestCase
         $urlToRemove = 'https://testsafebrowsing.appspot.com/s/phishing.html';
 
         $expected = [
-            $this->urlsToTest[1],
-            $this->urlsToTest[2],
-            $this->urlsToTest[3],
-            $this->urlsToTest[4],
+            $this->urlsToTest[ 1 ],
+            $this->urlsToTest[ 2 ],
+            $this->urlsToTest[ 3 ],
+            $this->urlsToTest[ 4 ],
         ];
-        $this->safeUrls->remove([$urlToRemove]);
+        $this->safeUrls->remove([ $urlToRemove ]);
 
         $actual = $this->safeUrls->getCurrentUrls(true);
 
@@ -59,7 +59,7 @@ class SafeUrlsTest extends TestCase
     {
         $this->safeUrls->add($this->urlsToTest);
 
-        $expected = [];
+        $expected = [ ];
         $this->safeUrls->remove($this->urlsToTest);
         $actual = $this->safeUrls->getCurrentUrls(true);
 
@@ -76,8 +76,8 @@ class SafeUrlsTest extends TestCase
 
         $expected = '{ "status": 200, "response": { "matches": [ { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/phishing.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/malware.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/SOCIAL_ENGINEERING/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" } ] } }';
 
-        $expected = json_decode($expected, true)['status'];
-        $actual = json_decode((string) $this->safeUrls->execute()->getResults(), true)['status'];
+        $expected = json_decode($expected, true)[ 'status' ];
+        $actual = json_decode((string) $this->safeUrls->execute()->getResults(), true)[ 'status' ];
 
         $this->assertEquals($expected, $actual);
     }
@@ -90,9 +90,9 @@ class SafeUrlsTest extends TestCase
     public function testCheck()
     {
         $expected = '{ "status": 200, "response": { "matches": [ { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/phishing.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "https://testsafebrowsing.appspot.com/s/malware.html" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/SOCIAL_ENGINEERING/URL/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "MALWARE", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" }, { "threatType": "SOCIAL_ENGINEERING", "platformType": "ANY_PLATFORM", "threat": { "url": "http://malware.testing.google.test/testing/malware/" }, "cacheDuration": "300s", "threatEntryType": "URL" } ] } }';
-        $expected = json_decode($expected, true)['status'];
+        $expected = json_decode($expected, true)[ 'status' ];
 
-        $actual = json_decode($this->safeUrls::check($this->urlsToTest), true)['status'];
+        $actual = json_decode($this->safeUrls::check($this->urlsToTest), true)[ 'status' ];
 
         $this->assertEquals($expected, $actual);
     }
@@ -105,7 +105,7 @@ class SafeUrlsTest extends TestCase
         $this->safeUrls->add($this->urlsToTest);
 
         $safeUrlsMock = $this->getMockBuilder(SafeUrls::class)
-            ->setMethods(['callStatic'])
+            ->setMethods([ 'callStatic' ])
             ->getMock();
 
         /* @scrutinizer ignore-call */

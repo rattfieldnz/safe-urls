@@ -46,7 +46,7 @@ class StaticCallingTraitTest extends TestCase
             $testClass->callStatic(
                 $className, $methodName, $this->urlsToTest
             ), true
-        )['status'];
+        )[ 'status' ];
 
         $this->assertEquals($expected, $actual);
     }
