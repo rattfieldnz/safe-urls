@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565317823">
-  <project timestamp="1565317823">
+<coverage generated="1565318637">
+  <project timestamp="1565318637">
     <package name="RattfieldNz\SafeUrls\Facades">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/Facades/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\Facades\SafeUrls" namespace="RattfieldNz\SafeUrls\Facades" category="PHP">
@@ -109,7 +109,7 @@
     <package name="RattfieldNz\SafeUrls">
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/SafeUrls.php">
         <class name="RattfieldNz\SafeUrls\SafeUrls" namespace="RattfieldNz\SafeUrls" category="PHP">
-          <metrics complexity="15" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="32" coveredelements="27"/>
+          <metrics complexity="16" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="19" elements="33" coveredelements="27"/>
         </class>
         <line num="35" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
         <line num="38" type="stmt" count="9"/>
@@ -134,16 +134,17 @@
         <line num="119" type="stmt" count="3"/>
         <line num="122" type="method" name="getResults" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="124" type="stmt" count="2"/>
-        <line num="135" type="method" name="isDangerous" visibility="public" complexity="5" crap="8.12" count="1"/>
+        <line num="135" type="method" name="isDangerous" visibility="public" complexity="6" crap="12.17" count="1"/>
         <line num="143" type="stmt" count="1"/>
         <line num="144" type="stmt" count="1"/>
-        <line num="145" type="stmt" count="1"/>
         <line num="146" type="stmt" count="1"/>
-        <line num="148" type="stmt" count="0"/>
-        <line num="149" type="stmt" count="0"/>
+        <line num="147" type="stmt" count="1"/>
         <line num="150" type="stmt" count="0"/>
+        <line num="152" type="stmt" count="0"/>
+        <line num="153" type="stmt" count="0"/>
         <line num="154" type="stmt" count="0"/>
-        <metrics loc="156" ncloc="78" classes="1" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="32" coveredelements="27"/>
+        <line num="159" type="stmt" count="0"/>
+        <metrics loc="161" ncloc="83" classes="1" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="19" elements="33" coveredelements="27"/>
       </file>
       <file name="/var/www/testproject/packages/rattfieldnz/safe-urls/src/SafeUrlsServiceProvider.php">
         <class name="RattfieldNz\SafeUrls\SafeUrlsServiceProvider" namespace="RattfieldNz\SafeUrls">
@@ -185,6 +186,6 @@
         <metrics loc="118" ncloc="64" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="13" elements="33" coveredelements="15"/>
       </file>
     </package>
-    <metrics files="7" loc="608" ncloc="324" classes="7" methods="31" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="99" coveredstatements="78" elements="130" coveredelements="102"/>
+    <metrics files="7" loc="613" ncloc="329" classes="7" methods="31" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="100" coveredstatements="78" elements="131" coveredelements="102"/>
   </project>
 </coverage>

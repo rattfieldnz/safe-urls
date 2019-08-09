@@ -142,12 +142,17 @@ class SafeUrls
 
         $data = json_decode((string) $this->results);
         $response = empty($data->response) ? null : $data->response;
+
         if (empty($response)) {
             return false;
         }
-        foreach ($response->matches as $result) {
-            if ($result->threat->url == $url) {
-                return true;
+
+        if(!empty($response->matches))
+        {
+            foreach ($response->matches as $result) {
+                if ($result->threat->url == $url) {
+                    return true;
+                }
             }
         }
 
