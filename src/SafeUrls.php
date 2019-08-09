@@ -135,7 +135,7 @@ class SafeUrls
     public function isDangerous(string $url): bool
     {
         $data = json_decode((string) $this->results);
-        $matches = empty($data->response['matches']) ? null : $data->response['matches'];
+        $matches = empty($data->response) ? null : $data->response['matches'];
         if (empty($matches)) {
             return false;
         }
