@@ -147,7 +147,7 @@ class SafeUrls
             return false;
         }
 
-        if (!empty($response->matches)) {
+        if (isset($response->matches)) {
             foreach ($response->matches as $result) {
                 if ($result->threat->url == $url) {
                     return true;

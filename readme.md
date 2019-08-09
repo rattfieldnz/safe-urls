@@ -11,7 +11,13 @@
 
 A Laravel package to check URLs with [Google's Safe Browsing API (look up)](https://developers.google.com/safe-browsing/v4/lookup-api). 
 
+Inspired by another similar package @ [https://github.com/snipe/Safebrowsing](https://github.com/snipe/Safebrowsing).
+
 Take a look at [contributing.md](contributing.md) to see a to do list.
+
+## Please Note:
+
+This project is not ready for use in production yet. When it is, there will be first major release (i.e. 1.0.0).
 
 ## Installation
 
