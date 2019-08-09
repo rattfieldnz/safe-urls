@@ -2,8 +2,6 @@ build:
   environment:
     php:
       version: 7.2
-      pecl_extensions:
-        - xdebug
       # variables:
       # DO NOT ADD YOUR KEY IN THIS FILE! DO IT SECURELY INSTEAD @ https://scrutinizer-ci.com/g/YOURGITHUBUSERNAME/YOUR-REPO/settings/build-config.
       # GOOGLE_API_KEY: YoUrGoOgLeApIkEy (Get your key from https://developers.google.com/safe-browsing/v4/get-started).
@@ -14,7 +12,7 @@ build:
           - 'true'
       tests:
         override:
-          - php-scrutinizer-run
+          - php-scrutinizer-run --enable-security-analysis
           -
             command: phpcs-run
             use_website_config: true

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear;
+
 # Second argument is test configuration and is required.
 if [ -z "$1" ] && [ -z "${GOOGLE_API_KEY}" ]; then
   echo 'Please provide a Google Safebrowsing API key.'
@@ -20,7 +22,7 @@ php -v | grep -q 'Xdebug';
 
 if [[ $? != 0 ]]; then
 
-  sleep 2;
+  sleep 1;
 
   echo -e "XDebug is not installed. Installing now...\n"
 
@@ -36,14 +38,22 @@ if [[ $? != 0 ]]; then
   echo -e "Finished installing XDebug.\n"
 fi
 
-sleep 2;
+sleep 1;
 
-echo -e "XDebug is installed. Now running PHPUnit tests and generating code coverage report...\n"
+php -v | grep -q 'Xdebug';
 
-vendor/bin/phpunit --coverage-clover coverage.xml;
+if [[ $? == 0 ]]; then
+  echo -e "XDebug is installed. Now running PHPUnit tests and generating code coverage report...\n"
 
-wget https://scrutinizer-ci.com/ocular.phar > /dev/null 2>&1;
-php ocular.phar code-coverage:upload --format=php-clover coverage.xml > /dev/null 2>&1;
-rm ocular.phar
+  vendor/bin/phpunit --coverage-clover coverage.xml;
 
-echo -e "\nPHPUnit testing and code coverage reports now completed!"
+  wget https://scrutinizer-ci.com/ocular.phar > /dev/null 2>&1;
+  php ocular.phar code-coverage:upload --format=php-clover coverage.xml > /dev/null 2>&1;
+  rm ocular.phar;
+
+  echo -e "\nPHPUnit testing and code coverage reports now completed!"
+else
+  echo -e "\nPHPUnit testing could not be done - XDebug is not installed!"
+fi
+
+
