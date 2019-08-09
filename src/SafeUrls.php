@@ -57,7 +57,7 @@ class SafeUrls
 
         $data = (new Curl($payload))->getData();
 
-        return $resultsAsArray == false ? $data : json_decode($data, true);
+        return $resultsAsArray === false ? $data : json_decode($data, true);
     }
 
     /**
@@ -116,7 +116,7 @@ class SafeUrls
      */
     public function getCurrentUrls(bool $asArray = false)
     {
-        return $asArray == false ? json_encode($this->urls) : $this->urls;
+        return $asArray === false ? json_encode($this->urls) : $this->urls;
     }
 
     public function getResults()
