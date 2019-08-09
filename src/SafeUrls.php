@@ -38,7 +38,7 @@ class SafeUrls
         $this->urls = [];
 
         // Initialise the list of urls as an empty JSON string.
-        $this->results = "";
+        $this->results = '';
     }
 
     /**
@@ -127,14 +127,14 @@ class SafeUrls
     /**
      * Check to see if the URL has been marked as unsafe.
      *
-     * @param string $url The URL to check.
+     * @param string $url       The URL to check.
      * @param string $resultSet An existing set of JSON results
-     *               to pass in as a parameter.
+     *                          to pass in as a parameter.
      *
      * @return bool True if the URL is unsafe, and false if
      *              it is safe,
      */
-    public function isDangerous(string $url, string $resultSet = ""): bool
+    public function isDangerous(string $url, string $resultSet = ''): bool
     {
         // Since Google API seems to not be working (even showing unsafe sites as 'safe'),
         // Below is a set of results retrieved via Postman.

@@ -154,7 +154,8 @@ class SafeUrlsTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testIsDangerousWithPassedInResultsReturnsFalse(){
+    public function testIsDangerousWithPassedInResultsReturnsFalse()
+    {
 
         // Testing with 200 status but empty response.
         $passedInResults = '{ "status": 200, "response": { }}';
@@ -175,6 +176,5 @@ class SafeUrlsTest extends TestCase
         $actual = $this->safeUrls->isDangerous($friendlyUrl, $passedInResults);
 
         $this->assertEquals($expected, $actual);
-
     }
 }
