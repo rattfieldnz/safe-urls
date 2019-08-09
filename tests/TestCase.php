@@ -16,6 +16,6 @@ abstract class TestCase extends Orchestra
      */
     protected function getPackageProviders($app)
     {
-        return [ SafeUrlsServiceProvider::class ];
+        return [SafeUrlsServiceProvider::class];
     }
 }
