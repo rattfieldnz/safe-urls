@@ -108,12 +108,12 @@ class SafeUrlsTest extends TestCase
             ->setMethods(['callStatic'])
             ->getMock();
 
-        /** @scrutinizer ignore-call */
+        /* @scrutinizer ignore-call */
         $safeUrlsMock->method('callStatic')
             ->with(SafeUrls::class, 'check', $this->urlsToTest)
             ->willThrowException(new \ErrorException('Expected Exception was thrown'));
 
-        /** @scrutinizer ignore-call */
+        /* @scrutinizer ignore-call */
         $safeUrlsMock->checkCallStatic($this->urlsToTest);
     }
 
