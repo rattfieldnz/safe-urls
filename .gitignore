@@ -10,3 +10,4 @@ npm-debug.log
 yarn-error.log
 .php_cs.cache
 ocular.phar
+ocular.phar.*
