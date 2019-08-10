@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RattfieldNz\SafeUrls;
+namespace RattfieldNz\SafeUrls\Tests\Traits;
 
 use RattfieldNz\SafeUrls\Libraries\Traits\StaticCalling;
+use RattfieldNz\SafeUrls\SafeUrls;
 use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class StaticCallingTraitTest extends TestCase

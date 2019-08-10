@@ -68,7 +68,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/safe-urls.php' => config_path('SafeUrls.php'),
+            __DIR__.'/../config/safe-urls.php' => config_path('safe-urls.php'),
         ], 'safe-urls');
 
         // Registering package commands.

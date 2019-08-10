@@ -5,7 +5,7 @@ namespace RattfieldNz\SafeUrls\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class SafeUrls.
+ * Class SafeUrlsFacade.
  *
  * @category PHP
  *
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @link https://github.com/rattfieldnz/safe-urls/
  */
-class SafeUrls extends Facade
+class SafeUrlsFacade extends Facade
 {
     /**
      * Get the registered name of the component.

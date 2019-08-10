@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RattfieldNz\SafeUrls\Libraries\Curl;
+namespace RattfieldNz\SafeUrls\Tests\Libraries\Curl;
 
+use RattfieldNz\SafeUrls\Libraries\Curl\Curl;
 use RattfieldNz\SafeUrls\Libraries\Data\Data;
 use RattfieldNz\SafeUrls\Tests\TestCase;
 

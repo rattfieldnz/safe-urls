@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RattfieldNz\SafeUrls\Libraries\Data;
+namespace RattfieldNz\SafeUrls\Tests\Libraries\Data;
 
 use RattfieldNz\SafeUrls\Libraries\Config\Config;
+use RattfieldNz\SafeUrls\Libraries\Data\Data;
 use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class DataTest extends TestCase

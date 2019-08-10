@@ -7,9 +7,9 @@ use RattfieldNz\SafeUrls\Libraries\Data\Data;
 use RattfieldNz\SafeUrls\Libraries\Traits\StaticCalling;
 
 /**
- * Class SafeUrls.
+ * Class SafeUrlsFacade.
  *
- * The main class used for the SafeUrls package.
+ * The main class used for the SafeUrlsFacade package.
  *
  * @category  PHP
  *
@@ -30,7 +30,7 @@ class SafeUrls
     private $results;
 
     /**
-     * SafeUrls constructor.
+     * SafeUrlsFacade constructor.
      */
     public function __construct()
     {

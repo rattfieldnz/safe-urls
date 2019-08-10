@@ -29,7 +29,8 @@
         "phpunit/php-code-coverage": "~6.1",
         "mihaeu/test-generator": "^1.0",
         "orchestra/testbench": "^3.8",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "phpspec/prophecy": "^1.8"
     },
     "autoload": {
         "psr-4": {
@@ -47,7 +48,7 @@
                 "RattfieldNz\\SafeUrls\\SafeUrlsServiceProvider"
             ],
             "aliases": {
-                "SafeUrls": "RattfieldNz\\SafeUrls\\Facades\\SafeUrls"
+                "SafeUrls": "RattfieldNz\\SafeUrls\\Facades\\SafeUrlsFacade"
             }
         }
     },
