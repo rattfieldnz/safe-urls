@@ -8,7 +8,7 @@ use Illuminate\Foundation\Application;
 use Prophecy\Prophet;
 use RattfieldNz\SafeUrls\Facades\SafeUrlsFacade;
 use RattfieldNz\SafeUrls\SafeUrls;
-use RattfieldNz\SafeUrls\Tests\TestCase;;
+use RattfieldNz\SafeUrls\Tests\TestCase;
 
 class SafeUrlsFacadeTest extends TestCase
 {
@@ -40,7 +40,6 @@ class SafeUrlsFacadeTest extends TestCase
 
     public function testSafeUrlsFacadeFacadeAdd()
     {
-
         $urls = ['https://google.com'];
         SafeUrlsFacade::add($urls);
 
