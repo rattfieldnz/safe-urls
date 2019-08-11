@@ -47,6 +47,8 @@ class SafeUrlsServiceProvider extends ServiceProvider
         $this->app->singleton('safe-urls', function () {
             return new SafeUrls();
         });
+
+        $this->app->alias(SafeUrls::class, 'safe-urls');
     }
 
     /**
@@ -64,7 +66,7 @@ class SafeUrlsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function bootForConsole()
+    public function bootForConsole()
     {
         // Publishing the configuration file.
         $this->publishes([
