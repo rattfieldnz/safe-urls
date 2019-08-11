@@ -1,9 +1,7 @@
 <?php
 
-
 namespace RattfieldNz\SafeUrls\Tests;
 
-use ArrayAccess;
 use Illuminate\Foundation\Application;
 use Mockery;
 use Mockery\MockInterface;
@@ -11,9 +9,7 @@ use RattfieldNz\SafeUrls\SafeUrls;
 use RattfieldNz\SafeUrls\SafeUrlsServiceProvider;
 
 /**
- * Class SafeUrlsServiceProviderTest
- *
- * @package RattfieldNz\SafeUrls\Tests
+ * Class SafeUrlsServiceProviderTest.
  */
 class SafeUrlsServiceProviderTest extends TestCase
 {
@@ -33,21 +29,21 @@ class SafeUrlsServiceProviderTest extends TestCase
     protected $provider;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function setUp():void
     {
         parent::setUp();
 
-        $this->config   = Mockery::mock();
+        $this->config = Mockery::mock();
 
         $this->appMock = Mockery::mock(Application::class);
 
         $this->provider = new SafeUrlsServiceProvider($this->app);
     }
 
-    public function testServiceProviderIsWorking(){
-
+    public function testServiceProviderIsWorking()
+    {
         $this->appMock->shouldReceive('singleton')->with(
             'safe-urls',
             Mockery::type('Closure')
@@ -60,7 +56,8 @@ class SafeUrlsServiceProviderTest extends TestCase
         $this->assertNull($this->provider->register());
     }
 
-    public function testProvides(){
+    public function testProvides()
+    {
         $this->appMock->shouldReceive('provides')->andReturn('safe-urls');
         $this->assertEquals(['safe-urls'], $this->provider->provides());
     }
@@ -73,7 +70,8 @@ class SafeUrlsServiceProviderTest extends TestCase
         $this->assertNull($this->provider->boot());
     }
 
-    public function testBootForConsole(){
+    public function testBootForConsole()
+    {
         $this->appMock->shouldReceive('publishes')
             ->zeroOrMoreTimes()
             ->with('path.config')

@@ -10,8 +10,10 @@ use RattfieldNz\SafeUrls\SafeUrlsServiceProvider;
 abstract class TestCase extends Orchestra
 {
     /**
-     * Load package service provider
+     * Load package service provider.
+     *
      * @param Application $app
+     *
      * @return array
      */
     protected function getPackageProviders($app)
@@ -19,10 +21,11 @@ abstract class TestCase extends Orchestra
         return [SafeUrlsServiceProvider::class];
     }
 
-
     /**
-     * Load package alias
-     * @param  Application $app
+     * Load package alias.
+     *
+     * @param Application $app
+     *
      * @return array
      */
     protected function getPackageAliases($app)
