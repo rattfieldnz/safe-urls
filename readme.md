@@ -80,6 +80,9 @@ In your `.env`, add:
 
 ``` bash
 GOOGLE_API_KEY=YOUR-ACTUAL-API-KEY
+GOOGLE_CLIENT_ID=your-client-id
+GOOGLE_CLIENT_VERSION=1.0 (or your preferred number)
+GOOGLE_CURL_TIMEOUT=10 (in seconds)
 ```
 
 There are additional options in the config file that relate to what specific types of threats you want to check for, and what platforms you want to check on, but you only really need to worry about that if you want to check *fewer* things, as it's pretty inclusive already.
