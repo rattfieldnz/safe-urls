@@ -15,30 +15,21 @@ Inspired by another similar package @ [https://github.com/snipe/Safebrowsing](ht
 
 Take a look at [contributing.md](contributing.md) to see a to do list.
 
-<hr>
-<ol>
-  <li>[Installation](#installation)
-    <ul>
-      <li>[Update Config](#update_config)</li>
-      <li>[Publish Config](#publish_config)</li>
-	  <li>[Set Your Google Safebrowsing API Key](#set_google_safebrowsing_key)</li>
-    </ul>
-  </li>
-  <li>[Usage](#usage)
-    <ul>
-	  <li>[Using Blade Syntax](#usage_blade)</li>
-	  <li>[Using Facades](#usage_facades)</li>
-	</ul>
-  </li>
-  <li>[Example With Input and Output](#example_with_input_and_output)</li>
-  <li>[Test URLs](#testing_urls)</li>
-  <li>[Testing](#testing)</li>
-  <li>[Contributing](#contributing)</li>
-  <li>[Security](#security)</li>
-  <li>[Credits](#credits)</li>
-  <li>[License](#license)</li>
-</ol>
-<hr>
+* [Installation](#installation)
+  * [Update Config](#update_config)
+  * [Publish Config](#publish_config)
+  * [Set Your Google Safebrowsing API Key](#set_google_safebrowsing_key)
+* [Usage](#usage)
+  * [Using Blade Syntax](#usage_blade)
+  * [Using Facades](#usage_facades)
+* [Example With Input and Output](#example_with_input_and_output)
+* [Test URLs](#testing_urls)
+* [Testing](#testing)
+* [Contributing](#contributing)
+* [Security](#security)
+* [Credits](#credits)
+* [License](#license)
+
 
 
 ## Please Note:
