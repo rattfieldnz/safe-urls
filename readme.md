@@ -15,6 +15,8 @@ Inspired by another similar package @ [https://github.com/snipe/Safebrowsing](ht
 
 Take a look at [contributing.md](contributing.md) to see a to do list.
 
+<hr/>
+
 * [Installation](#installation)
   * [Update Config](#update_config)
   * [Publish Config](#publish_config)
@@ -30,7 +32,7 @@ Take a look at [contributing.md](contributing.md) to see a to do list.
 * [Credits](#credits)
 * [License](#license)
 
-
+<hr/>
 
 ## Please Note:
 __This package requires that you have [an active Google Safebrowsing API key](https://developers.google.com/safe-browsing/v4/get-started). It absolutely will not work without one.__ It's free to create an API key .
