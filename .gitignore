@@ -11,3 +11,4 @@ yarn-error.log
 .php_cs.cache
 ocular.phar
 ocular.phar.*
+.phpstorm.meta.php
