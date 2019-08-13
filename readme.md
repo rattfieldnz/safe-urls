@@ -41,7 +41,7 @@ Google also throttles API usage, so if you have a high-traffic site, you may wan
 
 __This project is not ready for use in production yet. When it is, there will be first major release (i.e. 1.0.0).__
 
-## A Note Aabout Google Safebrowsing API Results
+## A Note About Google Safebrowsing API Results
 
 During testing, there were a few times when the API showed some malware sites as 'safe', whereas in reality they weren't. 
 
