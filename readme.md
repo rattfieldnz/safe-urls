@@ -41,6 +41,18 @@ Google also throttles API usage, so if you have a high-traffic site, you may wan
 
 __This project is not ready for use in production yet. When it is, there will be first major release (i.e. 1.0.0).__
 
+## A Note Aabout Google Safebrowsing API Results
+
+During testing, there were a few times when the API showed some malware sites as 'safe', whereas in reality they weren't. 
+
+For example, running PHPUnit tests showed the [sample sites below](#testing_urls) as being 'safe'; however, running the API in [Postman](https://www.getpostman.com/downloads/) produced expected results. I have not found a solution yet; however, any feedback / suggestions are welcome, as are pull requests etc. Below are links which I have read about this issue further:
+
+- https://github.com/google/safebrowsing/issues/30#issuecomment-302508958.
+- https://stackoverflow.com/questions/41934692/google-url-safe-browsingv4-lookup-api-is-not-working.
+- https://groups.google.com/forum/#!topic/google-safe-browsing-api/Z5FVGfBbl20
+- https://stackoverflow.com/questions/54625443/google-safe-browsing-not-detecting-url-even-it-unsafe-url
+
+
 ## <a id="installation"></a>Installation
 
 Via Composer
