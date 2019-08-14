@@ -29,7 +29,6 @@
         "phpunit/php-code-coverage": "~6.1",
         "mihaeu/test-generator": "^1.0",
         "orchestra/testbench": "^3.8",
-        "laravel/tinker": "^1.0",
         "phpspec/prophecy": "^1.8"
     },
     "autoload": {
