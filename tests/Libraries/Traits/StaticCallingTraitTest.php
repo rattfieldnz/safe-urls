@@ -17,7 +17,7 @@ class StaticCallingTraitTest extends TestCase
 
     private $urlsToTest;
 
-    protected function setUp():void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -45,8 +45,11 @@ class StaticCallingTraitTest extends TestCase
         $expected = 200;
         $actual = json_decode(
             $testClass->callStatic(
-                $className, $methodName, $this->urlsToTest
-            ), true
+                $className,
+                $methodName,
+                $this->urlsToTest
+            ),
+            true
         )['status'];
 
         $this->assertEquals($expected, $actual);
