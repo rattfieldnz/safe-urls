@@ -31,7 +31,7 @@ class SafeUrlsServiceProviderTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp():void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -50,7 +50,8 @@ class SafeUrlsServiceProviderTest extends TestCase
         )->andReturnNull();
 
         $this->appMock->shouldReceive('alias')->with(
-            SafeUrls::class, 'safe-urls'
+            SafeUrls::class,
+            'safe-urls'
         )->andReturnNull();
 
         $this->assertNull($this->provider->register());

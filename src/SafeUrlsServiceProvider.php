@@ -32,7 +32,8 @@ class SafeUrlsServiceProvider extends ServiceProvider
 
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__.'/../config/safe-urls.php', 'safe-urls'
+            __DIR__.'/../config/safe-urls.php',
+            'safe-urls'
         );
     }
 

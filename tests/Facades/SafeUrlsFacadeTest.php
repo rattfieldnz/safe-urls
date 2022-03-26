@@ -16,7 +16,7 @@ class SafeUrlsFacadeTest extends TestCase
 
     protected $prophet;
 
-    protected function setUp():void
+    protected function setUp(): void
     {
         parent::setUp();
 
